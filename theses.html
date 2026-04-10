@@ -19,7 +19,7 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 .count { font-size: 12px; color: #888; margin-left: auto; }
 
 /* Ticker accordion */
-.ticker-group { margin-bottom: 8px; border: 1px solid #333; border-radius: 6px; overflow: hidden; }
+.ticker-group { margin-bottom: 6px; border: 1px solid #333; border-radius: 6px; overflow: hidden; }
 .ticker-header { background: #222; padding: 10px 14px; cursor: pointer; display: flex;
     align-items: center; gap: 10px; user-select: none; }
 .ticker-header:hover { background: #2a2a2a; }
@@ -64,6 +64,8 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 .pill-low { background: #2a2a2a; color: #888; }
 .pill-primary { background: #1a2a3a; color: #6b9bd2; }
 .pill-echo { background: #2a2a2a; color: #888; font-style: italic; }
+.pill-new { background: #3a2a0a; color: #e8c840; animation: new-pulse 2s ease-in-out 3; }
+@keyframes new-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
 
 /* Expandable text */
 .expandable { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
@@ -77,11 +79,11 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 <body>
 <div class="container">
 <h1>Thesis Clusters</h1>
-<div class="meta">Data: 2026-04-10 | Built: 2026-04-10 06:47 UTC | 81 theses across 18 tickers</div>
+<div class="meta">Data: 2026-04-10 | Built: 2026-04-10 13:31 UTC | 81 theses across 18 tickers</div>
 
 <div class="filter-bar">
   <label>Ticker:</label>
-  <select id="f-ticker"><option value="">All</option><option value="000660.KS">000660.KS</option><option value="005930.KS">005930.KS</option><option value="APP">APP</option><option value="COIN">COIN</option><option value="GOOGL">GOOGL</option><option value="ITA">ITA</option><option value="KTOS">KTOS</option><option value="META">META</option><option value="MOO">MOO</option><option value="MOS">MOS</option><option value="MSFT">MSFT</option><option value="NTR">NTR</option><option value="NVDA">NVDA</option><option value="PLTR">PLTR</option><option value="RKLB">RKLB</option><option value="RTX">RTX</option><option value="SOCL">SOCL</option><option value="TSM">TSM</option></select>
+  <select id="f-ticker"><option value="">All</option><option value="TSM">TSM</option><option value="NVDA">NVDA</option><option value="MSFT">MSFT</option><option value="GOOGL">GOOGL</option><option value="000660.KS">000660.KS</option><option value="005930.KS">005930.KS</option><option value="APP">APP</option><option value="COIN">COIN</option><option value="ITA">ITA</option><option value="KTOS">KTOS</option><option value="META">META</option><option value="MOO">MOO</option><option value="MOS">MOS</option><option value="NTR">NTR</option><option value="PLTR">PLTR</option><option value="RKLB">RKLB</option><option value="RTX">RTX</option><option value="SOCL">SOCL</option></select>
   <label>Direction:</label>
   <select id="f-direction"><option value="">All</option><option value="long">long</option><option value="short">short</option></select>
   <label>Horizon:</label>
@@ -92,35 +94,479 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 </div>
 
 <div id="content">
-<div class="ticker-group open" data-ticker="000660.KS">
+<div class="ticker-group " data-ticker="TSM">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">000660.KS</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-name">TSM</span>
+    <span class="ticker-stats">1 cluster / 24 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
-    <div class="cluster" data-direction="long" data-horizon="medium"
-         data-digest="sk hynix hbm demand increases as anthropic scales inference infrastructure" data-claims="sk hynix hbm demand increases as anthropic scales inference infrastructure">
+    <div class="cluster" data-direction="long" data-horizon="long"
+         data-digest="taiwan semiconductor manufacturing capacity becomes a supply chain bottleneck in 2026, despite capacity increases planned through 2027" data-claims="taiwan semiconductor manufacturing capacity becomes a supply chain bottleneck in 2026, despite capacity increases planned through 2027 q1 2026 revenue will reach $34.6-$35.8 billion, representing 38% year-over-year growth at midpoint tsm stock will continue outperforming the s&amp;p 500 through 2026 tsmc q1 2026 revenue will reach $34.6b–$35.8b, representing 4% sequential growth and 38% year-over-year growth tsmc will launch 3nm chip production in japan by 2028 tsmc advanced-node capacity pricing will increase in 2026 due to demand exceeding supply advanced packaging capacity and chip supply constraints will be alleviated through tsmc&#x27;s overseas expansion initiative capex will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion tsmc remains a top ai chip pick due to tight capacity and strong competitive moat despite samsung and intel threats current capex trajectory will lag exponential ai compute demand, creating supply bottlenecks ai-related revenue will grow at 40%+ cagr tsmc will implement price increases due to supply shortages and strong demand for semiconductor capacity tsmc will remain the primary wafer supply bottleneck for semiconductor industry through 2026 tsmc q4 revenue exceeded forecasts at $104.6 billion, signaling strong semiconductor demand recent market selloff represents a buying opportunity with continued growth ahead revenue and eps expected to grow approximately 20% through 2026 tsm will achieve margin expansion through leadership in advanced ai and hpc chip manufacturing tsm will increase dividend by 20% based on strong earnings performance and cash generation tsm will deliver 36% revenue growth in next quarter driven by ai and high-performance computing demand tsm&#x27;s second arizona fab will achieve 3nm production in 2027 instead of 2028, accelerating advanced-node us revenue pull-forward tsm will achieve 5-year revenue cagr in the high 40s to 50% range high capex in 2026 will initially dilute tsmc&#x27;s financial metrics (earnings, margins, or returns) tsmc is not purely an ai-exposure play but rather a diversified semiconductor manufacturer with exposure to multiple tech sectors beyond ai, justifying buy-and-hold strategy tsmc stock represents a strong buy opportunity following recent price weakness, with robust ai-driven demand supporting long-term appreciation">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
         <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">SK Hynix HBM demand increases as Anthropic scales inference infrastructure</span>
+        <span class="cluster-digest">Taiwan Semiconductor manufacturing capacity becomes a supply chain bottleneck in 2026, despite capacity increases planned through 2027</span>
         <span class="cluster-meta">
           <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">1 source</span>
+          <span class="pill pill-long">long</span>
+          <span class="pill pill-high">high</span>
+          <span class="evidence-count">24 sources</span>
         </span>
       </div>
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td class="cell-claim"><span class="expandable">SK Hynix HBM demand increases as Anthropic scales inference infrastructure</span></td>
-              <td class="cell-catalyst"><span class="expandable">Anthropic model deployment requiring expanded memory bandwidth</span></td>
-              <td></td>
+              <td class="cell-claim"><span class="expandable">Taiwan Semiconductor manufacturing capacity becomes a supply chain bottleneck in 2026, despite capacity increases planned through 2027</span></td>
+              <td class="cell-catalyst"><span class="expandable">Semiconductor manufacturers increase production capacity but fail to meet demand growth; supply constraints emerge in 2026 before new capacity comes online in 2027</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/news/4567653-broadcom-exec-taiwan-semiconductor-ai-chip-supply" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Q1 2026 revenue will reach $34.6-$35.8 billion, representing 38% year-over-year growth at midpoint</span></td>
+              <td class="cell-catalyst"><span class="expandable">TSMC Q1 2026 earnings announcement and revenue realization</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://finance.yahoo.com/news/tsmc-raises-dividend-28-while-183325113.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSM stock will continue outperforming the S&amp;P 500 through 2026</span></td>
+              <td class="cell-catalyst"><span class="expandable">Sustained earnings growth and market rotation toward semiconductor strength</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://seekingalpha.com/article/4858939-taiwan-semiconductor-another-blowout-earnings-look-inevitable" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC Q1 2026 revenue will reach $34.6B–$35.8B, representing 4% sequential growth and 38% year-over-year growth</span></td>
+              <td class="cell-catalyst"><span class="expandable">AI chip demand sustains high utilization of TSMC manufacturing capacity; customer capex cycles remain elevated</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://seekingalpha.com/news/4539308-tsm-rises-after-q4-profit-surges-amid-ai-boom-plans-more-us-factories" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC will launch 3nm chip production in Japan by 2028</span></td>
+              <td class="cell-catalyst"><span class="expandable">TSMC&#x27;s geographic expansion strategy and Japanese government support/incentives</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4850620-tsmc-the-demand-remains-unmet-and-prices-will-increase-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC advanced-node capacity pricing will increase in 2026 due to demand exceeding supply</span></td>
+              <td class="cell-catalyst"><span class="expandable">Sustained high demand from key customers (Apple, Nvidia) securing future production commitments</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4850620-tsmc-the-demand-remains-unmet-and-prices-will-increase-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Advanced packaging capacity and chip supply constraints will be alleviated through TSMC&#x27;s overseas expansion initiative</span></td>
+              <td class="cell-catalyst"><span class="expandable">Current AI supercycle outpacing semiconductor supply; TSMC capital deployment overseas</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4860498-tsmc-strong-buy-the-ai-supercycle-is-outrunning-chip-supply" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">CapEx will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion</span></td>
+              <td class="cell-catalyst"><span class="expandable">AI supercycle demand outrunning chip supply; need to address capacity bottlenecks</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://seekingalpha.com/article/4860498-tsmc-strong-buy-the-ai-supercycle-is-outrunning-chip-supply" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC remains a top AI chip pick due to tight capacity and strong competitive moat despite Samsung and Intel threats</span></td>
+              <td class="cell-catalyst"><span class="expandable">Continued AI chip demand maintaining high utilization rates and pricing power</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4880959-tsmc-recent-fears-make-this-another-bargain-buying-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Current CapEx trajectory will lag exponential AI compute demand, creating supply bottlenecks</span></td>
+              <td class="cell-catalyst"><span class="expandable">AI chip demand exceeds TSMC&#x27;s manufacturing capacity expansion timeline</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4830942-tsmc-the-ai-bottleneck" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">AI-related revenue will grow at 40%+ CAGR</span></td>
+              <td class="cell-catalyst"><span class="expandable">Sustained hyperscaler demand for advanced chip manufacturing capacity</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4830942-tsmc-the-ai-bottleneck" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC will implement price increases due to supply shortages and strong demand for semiconductor capacity</span></td>
+              <td class="cell-catalyst"><span class="expandable">Aggressive capacity ramp-up in 2026 to clear backlog of customer orders</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4850968-tsmc-unmatched-moat-secular-ai-tailwinds-and-still-a-buy-at-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC will remain the primary wafer supply bottleneck for semiconductor industry through 2026</span></td>
+              <td class="cell-catalyst"><span class="expandable">Continued tight supply conditions persist into 2026 as demand outpaces manufacturing capacity</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://seekingalpha.com/article/4860033-taiwan-semiconductor-manufacturing-company-limited-tsm-q4-2025-earnings-call-transcript" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC Q4 revenue exceeded forecasts at $104.6 billion, signaling strong semiconductor demand</span></td>
+              <td class="cell-catalyst"><span class="expandable">Full Q4 earnings report and updated Q1 guidance announcement on January 15</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.reuters.com/world/asia-pacific/tsmc-posts-q4-revenue-104608-billion-above-forecasts-2026-01-09/" target="_blank" rel="noopener">reuters.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Recent market selloff represents a buying opportunity with continued growth ahead</span></td>
+              <td class="cell-catalyst"><span class="expandable">AI-driven demand fundamentals remain intact despite near-term price weakness</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4850765-taiwan-semiconductor-i-dont-think-growth-is-about-to-end" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Revenue and EPS expected to grow approximately 20% through 2026</span></td>
+              <td class="cell-catalyst"><span class="expandable">Robust AI-driven demand and strong execution by Taiwan Semiconductor</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4850765-taiwan-semiconductor-i-dont-think-growth-is-about-to-end" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSM will achieve margin expansion through leadership in advanced AI and HPC chip manufacturing</span></td>
+              <td class="cell-catalyst"><span class="expandable">Continued AI tailwinds driving high-margin advanced node demand; Q4 results demonstrate margin improvement</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSM will increase dividend by 20% based on strong earnings performance and cash generation</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q4 double beat on revenue and EPS; margin expansion from advanced chip manufacturing</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSM will deliver 36% revenue growth in next quarter driven by AI and high-performance computing demand</span></td>
+              <td class="cell-catalyst"><span class="expandable">Company guidance for 36% sequential revenue growth; AI chip manufacturing leadership position</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSM&#x27;s second Arizona fab will achieve 3nm production in 2027 instead of 2028, accelerating advanced-node US revenue pull-forward</span></td>
+              <td class="cell-catalyst"><span class="expandable">Acceleration of Arizona fab construction and ramp timeline</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4857005-tsmc-relentlessly-getting-stronger-market-mispricing-it" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSM will achieve 5-year revenue CAGR in the high 40s to 50% range</span></td>
+              <td class="cell-catalyst"><span class="expandable">Rapid foundry market share gains and Nvidia H200 demand for China shipments</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4857005-tsmc-relentlessly-getting-stronger-market-mispricing-it" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">High capex in 2026 will initially dilute TSMC&#x27;s financial metrics (earnings, margins, or returns)</span></td>
+              <td class="cell-catalyst"><span class="expandable">$52–56 billion capex deployment for 2nm production capacity</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://finance.yahoo.com/news/taiwan-semiconductor-manufacturing-company-limited-003257145.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC is not purely an AI-exposure play but rather a diversified semiconductor manufacturer with exposure to multiple tech sectors beyond AI, justifying buy-and-hold strategy</span></td>
+              <td class="cell-catalyst"><span class="expandable">Earnings announcements demonstrating revenue diversification across non-AI segments</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4888106-tsmc-much-more-than-just-ai-play-recent-jitters-present-great-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">TSMC stock represents a strong buy opportunity following recent price weakness, with robust AI-driven demand supporting long-term appreciation</span></td>
+              <td class="cell-catalyst"><span class="expandable">Share price retreat from all-time highs; upcoming earnings over next two weeks; geopolitical volatility creating entry points</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4888106-tsmc-much-more-than-just-ai-play-recent-jitters-present-great-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-group " data-ticker="NVDA">
+  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="ticker-name">NVDA</span>
+    <span class="ticker-stats">1 cluster / 23 theses</span>
+    <span class="ticker-arrow">&#9654;</span>
+  </div>
+  <div class="ticker-body">
+    <div class="cluster" data-direction="long" data-horizon="long"
+         data-digest="current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion" data-claims="current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion nvda stock will dip into single-digit percentage growth rates in 2026, indicating transition to low-growth business q1 2026 revenue will be approximately $43 billion with ±2% variance groq 3 lpx and vera rubin chips enable up to 35x improvement in token throughput, providing new growth catalyst nvidia will generate $1 trillion in ai chip revenue by 2027 nvidia benefits from anthropic&#x27;s compute scaling as model leader increases training/inference workloads defense ai adoption cycle creates incremental gpu demand as pentagon modernizes c2 systems with palantir-style ai decision support nand flash memory supply scarcity enables sandisk to achieve record-breaking earnings through significant price increases demand for nvidia chips will exceed supply for several quarters in fiscal 2026 due to supply chain constraints hyperscalers will spend nearly $650 billion on capex in 2026, with a significant portion directed toward ai data centers nvidia&#x27;s revenue growth will continue to accelerate, reaching 62% yoy growth in q3 fy2026 and maintaining strong cash flow generation nvidia revenue will reach $65 billion in fiscal q4 2026 (plus or minus 2%), with gaap gross margin of 74.8% (plus or minus 50bps) nvidia will continue to report strong financial results with earnings beats versus analyst expectations market expectations for sustained ai infrastructure spending growth are misaligned with actual capital deployment plans, particularly given openai deal failure ai capex spending sustainability is deteriorating due to concerns around monetization, quantum computing roi, and potential cashflow degradation strong nvidia fy2026 q4 results and better-than-expected guidance indicate sustained hyperscaler ai infrastructure investment cycle nvidia will maintain gross margins of approximately 75% in full-year fy2026, demonstrating sustained pricing power in ai accelerators openai partnership agreement worth $100b will finalize, securing long-term ai chip demand and revenue stream professional visualization revenue will exceed guidance by 75% with +159% yoy growth, reaching $1.32b versus streetaccount expectation of $755.4m vera rubin rack-scale systems will deliver 10x energy efficiency improvement per watt versus grace blackwell, addressing data center power constraints networking revenue will grow 263% yoy driven by nvlink adoption and spectrum-x ethernet switch deployments with hyperscalers nvidia&#x27;s business model converts a massive share of sales directly into cash due to low capital intensity relative to data center operators, enabling substantial capital returns despite high growth data center gpu revenue grows 40% yoy through 2027">
+      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="cluster-arrow">&#9654;</span>
+        <span class="cluster-digest">Current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion</span>
+        <span class="cluster-meta">
+          <span class="pill pill-long">long</span>
+          <span class="pill pill-long">long</span>
+          <span class="pill pill-high">high</span>
+          <span class="evidence-count">23 sources</span>
+        </span>
+      </div>
+      <div class="evidence">
+        <table>
+          <thead><tr>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion</span></td>
+              <td class="cell-catalyst"><span class="expandable">Nvidia&#x27;s official Q-current guidance announcement; revenue beats consensus by $5.4 billion or 7.4%</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/26/nvidia-posted-another-blockbuster-quarter-one-analyst-says-the-stock-is-a-coiled-spring.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">NVDA stock will dip into single-digit percentage growth rates in 2026, indicating transition to low-growth business</span></td>
+              <td class="cell-catalyst"><span class="expandable">NVDA earnings announcement and market reaction to forward guidance</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://www.fool.com/investing/2026/03/06/nvidia-posts-earnings-wall-street-says-thats-it/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Q1 2026 revenue will be approximately $43 billion with ±2% variance</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q4 2025 earnings guidance for Q1 2026</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4870798-nvidia-should-double-beat-again-earnings-preview" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Groq 3 LPX and Vera Rubin chips enable up to 35x improvement in token throughput, providing new growth catalyst</span></td>
+              <td class="cell-catalyst"><span class="expandable">Product unveiling at Nvidia GTC conference; new chip architecture delivering measurable performance gains</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4885382-nvidia-stock-to-see-new-growth-catalyst-35x-faster-ai-with-groq-3-lpx" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Nvidia will generate $1 trillion in AI chip revenue by 2027</span></td>
+              <td class="cell-catalyst"><span class="expandable">Nvidia GTC conference announcement of Groq 3 LPX and Vera Rubin chips with 35x token throughput improvement</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://seekingalpha.com/article/4885382-nvidia-stock-to-see-new-growth-catalyst-35x-faster-ai-with-groq-3-lpx" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">NAND flash memory supply scarcity enables SanDisk to achieve record-breaking earnings through significant price increases</span></td>
+              <td class="cell-catalyst"><span class="expandable">Global shortage of NAND flash memory persists</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4882807-sandisk-this-nvidia-gtc-2026-announcement-could-be-a-gamechanger" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Demand for NVIDIA chips will exceed supply for several quarters in fiscal 2026 due to supply chain constraints</span></td>
+              <td class="cell-catalyst"><span class="expandable">Supply chain constraints persist through FY2026, creating persistent chip shortage</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://finance.yahoo.com/news/nvidias-supply-snags-hurting-deliveries-021326703.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Hyperscalers will spend nearly $650 billion on capex in 2026, with a significant portion directed toward AI data centers</span></td>
+              <td class="cell-catalyst"><span class="expandable">Continued AI infrastructure buildout and adoption of large language models by hyperscalers</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4885348-memory-new-bottleneck-in-ai-semiconductors" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Nvidia&#x27;s revenue growth will continue to accelerate, reaching 62% YoY growth in Q3 FY2026 and maintaining strong cash flow generation</span></td>
+              <td class="cell-catalyst"><span class="expandable">Continued AI chip demand and hyperscaler capex spending</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.fool.com/investing/2026/02/24/nvidia-stock-is-outperforming-the-market-in-2026-i/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Nvidia revenue will reach $65 billion in fiscal Q4 2026 (plus or minus 2%), with GAAP gross margin of 74.8% (plus or minus 50bps)</span></td>
+              <td class="cell-catalyst"><span class="expandable">Fiscal Q4 2026 earnings announcement</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.fool.com/investing/2026/02/24/nvidia-stock-is-outperforming-the-market-in-2026-i/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Nvidia will continue to report strong financial results with earnings beats versus analyst expectations</span></td>
+              <td class="cell-catalyst"><span class="expandable">Consistent pattern of Q4 FY2026 beat (adjusted EPS $1.62 vs. $1.54 expected) validates track record of outperformance</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.fool.com/investing/2026/02/25/why-nvidia-stock-is-soaring-in-after-hours-trading/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Market expectations for sustained AI infrastructure spending growth are misaligned with actual capital deployment plans, particularly given OpenAI deal failure</span></td>
+              <td class="cell-catalyst"><span class="expandable">Stalled $100 billion OpenAI-Nvidia deal signals potential pullback in megacap capex commitments</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">AI capex spending sustainability is deteriorating due to concerns around monetization, quantum computing ROI, and potential cashflow degradation</span></td>
+              <td class="cell-catalyst"><span class="expandable">Nvidia&#x27;s $100 billion OpenAI deal stalling and Q4 earnings guidance failing to address capex sustainability questions</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Strong Nvidia FY2026 Q4 results and better-than-expected guidance indicate sustained hyperscaler AI infrastructure investment cycle</span></td>
+              <td class="cell-catalyst"><span class="expandable">Nvidia beat earnings expectations and issued above-consensus forward guidance in fiscal Q4 2026</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.fool.com/investing/2026/03/04/what-nvidias-blockbuster-quarter-tells-us-about-th/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Nvidia will maintain gross margins of approximately 75% in full-year FY2026, demonstrating sustained pricing power in AI accelerators</span></td>
+              <td class="cell-catalyst"><span class="expandable">Nvidia delivered 75.2% adjusted gross margin in fiscal Q4 2026 and guided for ~75% full-year margins</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.fool.com/investing/2026/03/04/what-nvidias-blockbuster-quarter-tells-us-about-th/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">OpenAI partnership agreement worth $100B will finalize, securing long-term AI chip demand and revenue stream</span></td>
+              <td class="cell-catalyst"><span class="expandable">Finalization of $100B partnership agreement announced in September 2025</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Professional visualization revenue will exceed guidance by 75% with +159% YoY growth, reaching $1.32B versus StreetAccount expectation of $755.4M</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q4 2026 earnings results and analyst expectations revision</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Vera Rubin rack-scale systems will deliver 10x energy efficiency improvement per watt versus Grace Blackwell, addressing data center power constraints</span></td>
+              <td class="cell-catalyst"><span class="expandable">Vera Rubin commercial release later in 2026</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Networking revenue will grow 263% YoY driven by NVLink adoption and Spectrum-X Ethernet switch deployments with hyperscalers</span></td>
+              <td class="cell-catalyst"><span class="expandable">Meta and other hyperscaler deals for NVLink networking technology and Spectrum-X Ethernet switches</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Nvidia&#x27;s business model converts a massive share of sales directly into cash due to low capital intensity relative to data center operators, enabling substantial capital returns despite high growth</span></td>
+              <td class="cell-catalyst"><span class="expandable">Continued demand for AI chips and maintenance of high gross margins as the company scales</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.fool.com/investing/2026/03/10/dont-overlook-this-under-the-radar-bull-case-for-n/" target="_blank" rel="noopener">fool.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Data center GPU revenue grows 40% YoY through 2027</span></td>
+              <td class="cell-catalyst"><span class="expandable">Hyperscaler capex commits</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://youtube.com/watch?v=mock_v3_ep1" target="_blank" rel="noopener">youtube.com</a></td>
+              <td>2026-04-07</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Defense AI adoption cycle creates incremental GPU demand as Pentagon modernizes C2 systems with Palantir-style AI decision support</span></td>
+              <td class="cell-catalyst"><span class="expandable">Autonomous weapons and AI decision-making discussion highlights Pentagon&#x27;s AI infrastructure needs</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://allinchamathjason.libsyn.com/the-state-of-modern-war-palantir-anduril-execs-on-drones-ai-and-the-end-of-traditional-warfare" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
+              <td>2026-04-06</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">NVIDIA benefits from Anthropic&#x27;s compute scaling as model leader increases training/inference workloads</span></td>
+              <td class="cell-catalyst"><span class="expandable">Anthropic model superiority driving enterprise adoption and compute demand</span></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -133,133 +579,203 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="005930.KS">
+<div class="ticker-group " data-ticker="MSFT">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">005930.KS</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-name">MSFT</span>
+    <span class="ticker-stats">1 cluster / 18 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
-    <div class="cluster" data-direction="short" data-horizon="medium"
-         data-digest="samsung hbm unit demand contracts 15% if pruning adopted" data-claims="samsung hbm unit demand contracts 15% if pruning adopted">
+    <div class="cluster" data-direction="long" data-horizon="long"
+         data-digest="capex will exceed $100 billion in fy2026, driven by genuine demand and capacity constraints rather than speculative overbuilding" data-claims="capex will exceed $100 billion in fy2026, driven by genuine demand and capacity constraints rather than speculative overbuilding cloud leadership, copilot monetization, and $625 billion commercial backlog will drive long-term shareholder returns for existing holders microsoft azure benefits from hosting anthropic infrastructure and potential openai recovery efforts microsoft faces valuation pressure from openai down round given $13b investment exposure power delivery and electrical infrastructure becomes a bottleneck for ai data center expansion in 2026 optical interconnect and networking components become supply-constrained as ai clusters scale in 2026 memory becomes a supply bottleneck for ai infrastructure in 2026, shifting from gpu-centric constraints microsoft will generate revenue growth from commercial office productivity software price increases effective july 2025 microsoft will generate substantial cloud services revenue from anthropic&#x27;s $30 billion cloud services commitment and up to 1 gigawatt additional computing capacity contract microsoft cloud growth is decelerating, evidenced by stock falling 7% on q2 fy2026 earnings despite 16.7% yoy revenue growth msft is trading at 23.72x 2026 forward earnings with consensus eps estimates of $23.72 for 2026, suggesting the stock is at fair valuation multiples relative to earnings growth microsoft cloud gross margin will decline year-over-year to approximately 65%, driven by continued ai infrastructure investments commercial bookings momentum will sustain with 112% yoy growth and rpo of $392b (+51% yoy), indicating strong enterprise ai adoption and multi-year commit trends microsoft cloud revenue will grow 26% yoy with microsoft cloud reaching $49.1b in q1 fy26, driven by ai workload adoption azure will remain capacity-constrained through fy26 due to accelerating ai demand, requiring sustained elevated capex spending microsoft will deliver 19.2% earnings growth through 2026, supporting a 28.3x forward p/e valuation multiple at current price levels (~$455/share) microsoft revenue growth accelerating at 18% yoy in fiscal 2026, with operating income growth outpacing at 24% yoy msft will achieve dividend aristocrat status and should be held long-term due to strong revenue growth and management quality">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
         <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Samsung HBM unit demand contracts 15% if pruning adopted</span>
-        <span class="cluster-meta">
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">1 source</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Samsung HBM unit demand contracts 15% if pruning adopted</span></td>
-              <td class="cell-catalyst"><span class="expandable">Hyperscaler adoption</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://youtube.com/watch?v=mock_v3_ep1" target="_blank" rel="noopener">youtube.com</a></td>
-              <td>2026-04-07</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-group open" data-ticker="APP">
-  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">APP</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
-    <span class="ticker-arrow">&#9654;</span>
-  </div>
-  <div class="ticker-body">
-    <div class="cluster" data-direction="long" data-horizon="medium"
-         data-digest="axon.ai ai advertising platform achieves &gt;1b dau with 35-second engagement, demonstrating superior mobile gaming ad monetization" data-claims="axon.ai ai advertising platform achieves &gt;1b dau with 35-second engagement, demonstrating superior mobile gaming ad monetization">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Axon.ai AI advertising platform achieves &gt;1B DAU with 35-second engagement, demonstrating superior mobile gaming ad monetization</span>
+        <span class="cluster-digest">CapEx will exceed $100 billion in FY2026, driven by genuine demand and capacity constraints rather than speculative overbuilding</span>
         <span class="cluster-meta">
           <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
+          <span class="pill pill-long">long</span>
           <span class="pill pill-high">high</span>
-          <span class="evidence-count">1 source</span>
+          <span class="evidence-count">18 sources</span>
         </span>
       </div>
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td class="cell-claim"><span class="expandable">Axon.ai AI advertising platform achieves &gt;1B DAU with 35-second engagement, demonstrating superior mobile gaming ad monetization</span></td>
-              <td class="cell-catalyst"><span class="expandable">Axon.ai platform scaling to 1 billion daily active users with closed beta advertiser access creating supply constraint</span></td>
-              <td></td>
+              <td class="cell-claim"><span class="expandable">CapEx will exceed $100 billion in FY2026, driven by genuine demand and capacity constraints rather than speculative overbuilding</span></td>
+              <td class="cell-catalyst"><span class="expandable">Sustained AI/cloud demand from enterprise and hyperscaler customers requiring infrastructure capacity expansion</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4887334-microsoft-back-to-pre-covid-multiples-but-the-business-has-moved-on" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Cloud leadership, Copilot monetization, and $625 billion commercial backlog will drive long-term shareholder returns for existing holders</span></td>
+              <td class="cell-catalyst"><span class="expandable">Copilot adoption and commercial deployment across Microsoft&#x27;s cloud services; execution on $625B backlog conversion to revenue</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://finance.yahoo.com/news/microsoft-trades-premium-p-buy-142900933.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Power delivery and electrical infrastructure becomes a bottleneck for AI data center expansion in 2026</span></td>
+              <td class="cell-catalyst"><span class="expandable">Hyperscaler power consumption requirements exceed grid capacity and PSU/power module supply</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Optical interconnect and networking components become supply-constrained as AI clusters scale in 2026</span></td>
+              <td class="cell-catalyst"><span class="expandable">Demand for high-speed optical transceivers and interconnect solutions exceeds manufacturing capacity</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Memory becomes a supply bottleneck for AI infrastructure in 2026, shifting from GPU-centric constraints</span></td>
+              <td class="cell-catalyst"><span class="expandable">AI model training and inference demands exceed memory supply capacity as GPU availability increases</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft will generate revenue growth from commercial Office productivity software price increases effective July 2025</span></td>
+              <td class="cell-catalyst"><span class="expandable">Microsoft announced commercial Office subscription price increases during Q2 FY2026</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft will generate substantial cloud services revenue from Anthropic&#x27;s $30 billion cloud services commitment and up to 1 gigawatt additional computing capacity contract</span></td>
+              <td class="cell-catalyst"><span class="expandable">Anthropic announced $30 billion commitment to buy cloud services and up to 1 gigawatt additional computing capacity from Microsoft</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft cloud growth is decelerating, evidenced by stock falling 7% on Q2 FY2026 earnings despite 16.7% YoY revenue growth</span></td>
+              <td class="cell-catalyst"><span class="expandable">Microsoft Q2 FY2026 earnings report (ended Dec 31, 2025) showed slowing cloud growth</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">MSFT is trading at 23.72x 2026 forward earnings with consensus EPS estimates of $23.72 for 2026, suggesting the stock is at fair valuation multiples relative to earnings growth</span></td>
+              <td class="cell-catalyst"><span class="expandable">Market repricing of MSFT valuation as it enters bear market territory, creating entry opportunity at normalized multiples</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://seekingalpha.com/article/4873886-microsoft-is-in-a-bear-market-which-is-creating-a-major-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft Cloud gross margin will decline year-over-year to approximately 65%, driven by continued AI infrastructure investments</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q2 FY2026 earnings guidance disclosure; elevated capex for AI compute and data center buildout</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://seekingalpha.com/article/4863620-microsoft-corporation-msft-q2-2026-earnings-call-transcript" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Commercial bookings momentum will sustain with 112% YoY growth and RPO of $392B (+51% YoY), indicating strong enterprise AI adoption and multi-year commit trends</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q1 FY26 commercial bookings surged 112% YoY with RPO up 51% to $392B</span></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://allinchamathjason.libsyn.com/the-state-of-modern-war-palantir-anduril-execs-on-drones-ai-and-the-end-of-traditional-warfare" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
-              <td>2026-04-06</td>
+              <td><a href="https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-group open" data-ticker="COIN">
-  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">COIN</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
-    <span class="ticker-arrow">&#9654;</span>
-  </div>
-  <div class="ticker-body">
-    <div class="cluster" data-direction="short" data-horizon="long"
-         data-digest="coinbase faces long-term existential risk from quantum computing threat to crypto security" data-claims="coinbase faces long-term existential risk from quantum computing threat to crypto security">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Coinbase faces long-term existential risk from quantum computing threat to crypto security</span>
-        <span class="cluster-meta">
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-low">low</span>
-          <span class="evidence-count">1 source</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
             <tr>
-              <td class="cell-claim"><span class="expandable">Coinbase faces long-term existential risk from quantum computing threat to crypto security</span></td>
-              <td class="cell-catalyst"><span class="expandable">Quantum Bitcoin hack discussion raises crypto security concerns</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
+              <td class="cell-claim"><span class="expandable">Microsoft Cloud revenue will grow 26% YoY with Microsoft Cloud reaching $49.1B in Q1 FY26, driven by AI workload adoption</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q1 FY26 results showed 26% YoY growth in Microsoft Cloud revenue to $49.1B</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Azure will remain capacity-constrained through FY26 due to accelerating AI demand, requiring sustained elevated CapEx spending</span></td>
+              <td class="cell-catalyst"><span class="expandable">Management raised CapEx guidance and confirmed Azure capacity constraints persist through end of FY26</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft will deliver 19.2% earnings growth through 2026, supporting a 28.3x forward P/E valuation multiple at current price levels (~$455/share)</span></td>
+              <td class="cell-catalyst"><span class="expandable">Realization of projected earnings growth trajectory and market acceptance of 28.3x multiple as justified by growth rate</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://seekingalpha.com/article/4861074-microsoft-the-134-billion-misunderstanding" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft revenue growth accelerating at 18% YoY in fiscal 2026, with operating income growth outpacing at 24% YoY</span></td>
+              <td class="cell-catalyst"><span class="expandable">Strong fiscal 2026 start with $77.7B total revenue and $38.0B operating income</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://finance.yahoo.com/news/microsoft-corporation-msft-bull-case-182607326.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">MSFT will achieve dividend aristocrat status and should be held long-term due to strong revenue growth and management quality</span></td>
+              <td class="cell-catalyst"><span class="expandable">Q1 2026 revenue of $77.7B (+18% YoY) demonstrates sustained growth momentum and operational execution</span></td>
+              <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://seekingalpha.com/article/4851018-time-to-buy-this-future-dividend-aristocrat-microsoft" target="_blank" rel="noopener">seekingalpha.com</a></td>
+              <td>2026-04-10</td>
+            </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft faces valuation pressure from OpenAI down round given $13B investment exposure</span></td>
+              <td class="cell-catalyst"><span class="expandable">OpenAI secondary market weakness signals overvaluation of AI investments</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
               <td><a href="https://allinchamathjason.libsyn.com/spacex-ipo-iran-war-fallout-quantum-bitcoin-hack-the-space-opportunity" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
               <td>2026-04-03</td>
             </tr>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Microsoft Azure benefits from hosting Anthropic infrastructure and potential OpenAI recovery efforts</span></td>
+              <td class="cell-catalyst"><span class="expandable">Both Anthropic and OpenAI use Azure infrastructure</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://allinchamathjason.libsyn.com/anthropics-generational-run-openai-panics-ai-moats-meta-loses-lawsuits" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
+              <td>2026-03-27</td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="GOOGL">
+<div class="ticker-group " data-ticker="GOOGL">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">GOOGL</span>
-    <span class="ticker-stats">1 clusters / 2 theses</span>
+    <span class="ticker-stats">1 cluster / 2 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -278,13 +794,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Google benefits from OpenAI weakness as Anthropic (Google-backed) gains market share</span></td>
               <td class="cell-catalyst"><span class="expandable">Anthropic runs hot while OpenAI demand sinks per secondary market signals</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -294,7 +809,6 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
             <tr>
               <td class="cell-claim"><span class="expandable">Google benefits from Anthropic partnership and potential OpenAI market share losses</span></td>
               <td class="cell-catalyst"><span class="expandable">Google invested in Anthropic, can leverage model for Cloud/Search</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -307,10 +821,170 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="ITA">
+<div class="ticker-group " data-ticker="000660.KS">
+  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="ticker-name">000660.KS</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
+    <span class="ticker-arrow">&#9654;</span>
+  </div>
+  <div class="ticker-body">
+    <div class="cluster" data-direction="long" data-horizon="medium"
+         data-digest="sk hynix hbm demand increases as anthropic scales inference infrastructure" data-claims="sk hynix hbm demand increases as anthropic scales inference infrastructure">
+      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="cluster-arrow">&#9654;</span>
+        <span class="cluster-digest">SK Hynix HBM demand increases as Anthropic scales inference infrastructure</span>
+        <span class="cluster-meta">
+          <span class="pill pill-long">long</span>
+          <span class="pill pill-medium">medium</span>
+          <span class="pill pill-medium">medium</span>
+          <span class="evidence-count">1 source</span>
+        </span>
+      </div>
+      <div class="evidence">
+        <table>
+          <thead><tr>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="cell-claim"><span class="expandable">SK Hynix HBM demand increases as Anthropic scales inference infrastructure</span></td>
+              <td class="cell-catalyst"><span class="expandable">Anthropic model deployment requiring expanded memory bandwidth</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://allinchamathjason.libsyn.com/anthropics-generational-run-openai-panics-ai-moats-meta-loses-lawsuits" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
+              <td>2026-03-27</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-group " data-ticker="005930.KS">
+  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="ticker-name">005930.KS</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
+    <span class="ticker-arrow">&#9654;</span>
+  </div>
+  <div class="ticker-body">
+    <div class="cluster" data-direction="short" data-horizon="medium"
+         data-digest="samsung hbm unit demand contracts 15% if pruning adopted" data-claims="samsung hbm unit demand contracts 15% if pruning adopted">
+      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="cluster-arrow">&#9654;</span>
+        <span class="cluster-digest">Samsung HBM unit demand contracts 15% if pruning adopted</span>
+        <span class="cluster-meta">
+          <span class="pill pill-short">short</span>
+          <span class="pill pill-medium">medium</span>
+          <span class="pill pill-medium">medium</span>
+          <span class="evidence-count">1 source</span>
+        </span>
+      </div>
+      <div class="evidence">
+        <table>
+          <thead><tr>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Samsung HBM unit demand contracts 15% if pruning adopted</span></td>
+              <td class="cell-catalyst"><span class="expandable">Hyperscaler adoption</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><a href="https://youtube.com/watch?v=mock_v3_ep1" target="_blank" rel="noopener">youtube.com</a></td>
+              <td>2026-04-07</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-group " data-ticker="APP">
+  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="ticker-name">APP</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
+    <span class="ticker-arrow">&#9654;</span>
+  </div>
+  <div class="ticker-body">
+    <div class="cluster" data-direction="long" data-horizon="medium"
+         data-digest="axon.ai ai advertising platform achieves &gt;1b dau with 35-second engagement, demonstrating superior mobile gaming ad monetization" data-claims="axon.ai ai advertising platform achieves &gt;1b dau with 35-second engagement, demonstrating superior mobile gaming ad monetization">
+      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="cluster-arrow">&#9654;</span>
+        <span class="cluster-digest">Axon.ai AI advertising platform achieves &gt;1B DAU with 35-second engagement, demonstrating superior mobile gaming ad monetization</span>
+        <span class="cluster-meta">
+          <span class="pill pill-long">long</span>
+          <span class="pill pill-medium">medium</span>
+          <span class="pill pill-high">high</span>
+          <span class="evidence-count">1 source</span>
+        </span>
+      </div>
+      <div class="evidence">
+        <table>
+          <thead><tr>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Axon.ai AI advertising platform achieves &gt;1B DAU with 35-second engagement, demonstrating superior mobile gaming ad monetization</span></td>
+              <td class="cell-catalyst"><span class="expandable">Axon.ai platform scaling to 1 billion daily active users with closed beta advertiser access creating supply constraint</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-medium">medium</span></td>
+              <td><span class="pill pill-high">high</span></td>
+              <td><a href="https://allinchamathjason.libsyn.com/the-state-of-modern-war-palantir-anduril-execs-on-drones-ai-and-the-end-of-traditional-warfare" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
+              <td>2026-04-06</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-group " data-ticker="COIN">
+  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="ticker-name">COIN</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
+    <span class="ticker-arrow">&#9654;</span>
+  </div>
+  <div class="ticker-body">
+    <div class="cluster" data-direction="short" data-horizon="long"
+         data-digest="coinbase faces long-term existential risk from quantum computing threat to crypto security" data-claims="coinbase faces long-term existential risk from quantum computing threat to crypto security">
+      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="cluster-arrow">&#9654;</span>
+        <span class="cluster-digest">Coinbase faces long-term existential risk from quantum computing threat to crypto security</span>
+        <span class="cluster-meta">
+          <span class="pill pill-short">short</span>
+          <span class="pill pill-long">long</span>
+          <span class="pill pill-low">low</span>
+          <span class="evidence-count">1 source</span>
+        </span>
+      </div>
+      <div class="evidence">
+        <table>
+          <thead><tr>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="cell-claim"><span class="expandable">Coinbase faces long-term existential risk from quantum computing threat to crypto security</span></td>
+              <td class="cell-catalyst"><span class="expandable">Quantum Bitcoin hack discussion raises crypto security concerns</span></td>
+              <td><span class="pill pill-short">short</span></td>
+              <td><span class="pill pill-long">long</span></td>
+              <td><span class="pill pill-low">low</span></td>
+              <td><a href="https://allinchamathjason.libsyn.com/spacex-ipo-iran-war-fallout-quantum-bitcoin-hack-the-space-opportunity" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
+              <td>2026-04-03</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ticker-group " data-ticker="ITA">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">ITA</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -329,13 +1003,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">US munitions supply chain rebuild via modern manufacturing (Arsenal-1 factory model) addresses critical defense industrial base weakness</span></td>
               <td class="cell-catalyst"><span class="expandable">Anduril&#x27;s Arsenal-1 factory demonstrates scalable autonomous weapons production, exposing legacy contractor inefficiencies</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -348,10 +1021,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="KTOS">
+<div class="ticker-group " data-ticker="KTOS">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">KTOS</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -370,13 +1043,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Drone specialist benefits from acknowledged US-China drone gap requiring urgent US production scale-up</span></td>
               <td class="cell-catalyst"><span class="expandable">Defense community recognizes 2027 Taiwan timeline requires immediate drone production capacity expansion</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-low">low</span></td>
@@ -389,10 +1061,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="META">
+<div class="ticker-group " data-ticker="META">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">META</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -411,13 +1083,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Meta faces landmark social media verdicts</span></td>
               <td class="cell-catalyst"><span class="expandable">Two landmark social media verdicts against Meta</span></td>
-              <td></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-low">low</span></td>
@@ -430,10 +1101,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="MOO">
+<div class="ticker-group " data-ticker="MOO">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">MOO</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -452,13 +1123,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Iran War costs lead to fertilizer crisis and downstream impacts</span></td>
               <td class="cell-catalyst"><span class="expandable">Iran War</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -471,10 +1141,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="MOS">
+<div class="ticker-group " data-ticker="MOS">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">MOS</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -493,13 +1163,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Mosaic fertilizer benefits from Iran supply disruption and urea price spike</span></td>
               <td class="cell-catalyst"><span class="expandable">Iran war disrupts Middle East fertilizer exports, creating supply shortage</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -512,353 +1181,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="MSFT">
-  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">MSFT</span>
-    <span class="ticker-stats">7 clusters / 18 theses</span>
-    <span class="ticker-arrow">&#9654;</span>
-  </div>
-  <div class="ticker-body">
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="model msft&#x27;s capex trajectory exceeding $100b by fy2026 as a core earnings driver, factoring in sustained capacity constraints across gpu, memory, optical interconnect, and power delivery through 2026." data-claims="capex will exceed $100 billion in fy2026, driven by genuine demand and capacity constraints rather than speculative overbuilding power delivery and electrical infrastructure becomes a bottleneck for ai data center expansion in 2026 optical interconnect and networking components become supply-constrained as ai clusters scale in 2026 memory becomes a supply bottleneck for ai infrastructure in 2026, shifting from gpu-centric constraints azure will remain capacity-constrained through fy26 due to accelerating ai demand, requiring sustained elevated capex spending">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Model MSFT&#x27;s CapEx trajectory exceeding $100B by FY2026 as a core earnings driver, factoring in sustained capacity constraints across GPU, memory, optical interconnect, and power delivery through 2026.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">5 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">CapEx will exceed $100 billion in FY2026, driven by genuine demand and capacity constraints rather than speculative overbuilding</span></td>
-              <td class="cell-catalyst"><span class="expandable">Sustained AI/cloud demand from enterprise and hyperscaler customers requiring infrastructure capacity expansion</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4887334-microsoft-back-to-pre-covid-multiples-but-the-business-has-moved-on" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Power delivery and electrical infrastructure becomes a bottleneck for AI data center expansion in 2026</span></td>
-              <td class="cell-catalyst"><span class="expandable">Hyperscaler power consumption requirements exceed grid capacity and PSU/power module supply</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Optical interconnect and networking components become supply-constrained as AI clusters scale in 2026</span></td>
-              <td class="cell-catalyst"><span class="expandable">Demand for high-speed optical transceivers and interconnect solutions exceeds manufacturing capacity</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Memory becomes a supply bottleneck for AI infrastructure in 2026, shifting from GPU-centric constraints</span></td>
-              <td class="cell-catalyst"><span class="expandable">AI model training and inference demands exceed memory supply capacity as GPU availability increases</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Azure will remain capacity-constrained through FY26 due to accelerating AI demand, requiring sustained elevated CapEx spending</span></td>
-              <td class="cell-catalyst"><span class="expandable">Management raised CapEx guidance and confirmed Azure capacity constraints persist through end of FY26</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="build 26% microsoft cloud growth thesis anchored on azure capacity monetization, anthropic/openai hosting commitments ($30b cloud services), and copilot commercial adoption to validate 19.2% earnings growth assumptions." data-claims="cloud leadership, copilot monetization, and $625 billion commercial backlog will drive long-term shareholder returns for existing holders microsoft azure benefits from hosting anthropic infrastructure and potential openai recovery efforts microsoft will generate substantial cloud services revenue from anthropic&#x27;s $30 billion cloud services commitment and up to 1 gigawatt additional computing capacity contract microsoft cloud revenue will grow 26% yoy with microsoft cloud reaching $49.1b in q1 fy26, driven by ai workload adoption">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Build 26% Microsoft Cloud growth thesis anchored on Azure capacity monetization, Anthropic/OpenAI hosting commitments ($30B cloud services), and Copilot commercial adoption to validate 19.2% earnings growth assumptions.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">4 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Cloud leadership, Copilot monetization, and $625 billion commercial backlog will drive long-term shareholder returns for existing holders</span></td>
-              <td class="cell-catalyst"><span class="expandable">Copilot adoption and commercial deployment across Microsoft&#x27;s cloud services; execution on $625B backlog conversion to revenue</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://finance.yahoo.com/news/microsoft-trades-premium-p-buy-142900933.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft will generate substantial cloud services revenue from Anthropic&#x27;s $30 billion cloud services commitment and up to 1 gigawatt additional computing capacity contract</span></td>
-              <td class="cell-catalyst"><span class="expandable">Anthropic announced $30 billion commitment to buy cloud services and up to 1 gigawatt additional computing capacity from Microsoft</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft Cloud revenue will grow 26% YoY with Microsoft Cloud reaching $49.1B in Q1 FY26, driven by AI workload adoption</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q1 FY26 results showed 26% YoY growth in Microsoft Cloud revenue to $49.1B</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft Azure benefits from hosting Anthropic infrastructure and potential OpenAI recovery efforts</span></td>
-              <td class="cell-catalyst"><span class="expandable">Both Anthropic and OpenAI use Azure infrastructure</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://allinchamathjason.libsyn.com/anthropics-generational-run-openai-panics-ai-moats-meta-loses-lawsuits" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
-              <td>2026-03-27</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="medium"
-         data-digest="monitor commercial bookings growth (112% yoy) and rpo expansion ($392b, +51% yoy) as leading indicators of multi-year enterprise ai adoption; track office productivity pricing increases (july 2025) for near-term revenue uplift." data-claims="microsoft will generate revenue growth from commercial office productivity software price increases effective july 2025 commercial bookings momentum will sustain with 112% yoy growth and rpo of $392b (+51% yoy), indicating strong enterprise ai adoption and multi-year commit trends microsoft revenue growth accelerating at 18% yoy in fiscal 2026, with operating income growth outpacing at 24% yoy">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Monitor commercial bookings growth (112% YoY) and RPO expansion ($392B, +51% YoY) as leading indicators of multi-year enterprise AI adoption; track Office productivity pricing increases (July 2025) for near-term revenue uplift.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">3 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft will generate revenue growth from commercial Office productivity software price increases effective July 2025</span></td>
-              <td class="cell-catalyst"><span class="expandable">Microsoft announced commercial Office subscription price increases during Q2 FY2026</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Commercial bookings momentum will sustain with 112% YoY growth and RPO of $392B (+51% YoY), indicating strong enterprise AI adoption and multi-year commit trends</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q1 FY26 commercial bookings surged 112% YoY with RPO up 51% to $392B</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft revenue growth accelerating at 18% YoY in fiscal 2026, with operating income growth outpacing at 24% YoY</span></td>
-              <td class="cell-catalyst"><span class="expandable">Strong fiscal 2026 start with $77.7B total revenue and $38.0B operating income</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://finance.yahoo.com/news/microsoft-corporation-msft-bull-case-182607326.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="defend 23.72x–28.3x forward p/e range by stress-testing whether 19.2% earnings growth and 26% cloud revenue growth can sustain consensus 2026 eps estimates of $23.72, given 65% cloud gross margins." data-claims="msft is trading at 23.72x 2026 forward earnings with consensus eps estimates of $23.72 for 2026, suggesting the stock is at fair valuation multiples relative to earnings growth microsoft will deliver 19.2% earnings growth through 2026, supporting a 28.3x forward p/e valuation multiple at current price levels (~$455/share)">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Defend 23.72x–28.3x forward P/E range by stress-testing whether 19.2% earnings growth and 26% Cloud revenue growth can sustain consensus 2026 EPS estimates of $23.72, given 65% Cloud gross margins.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">2 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">MSFT is trading at 23.72x 2026 forward earnings with consensus EPS estimates of $23.72 for 2026, suggesting the stock is at fair valuation multiples relative to earnings growth</span></td>
-              <td class="cell-catalyst"><span class="expandable">Market repricing of MSFT valuation as it enters bear market territory, creating entry opportunity at normalized multiples</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-low">low</span></td>
-              <td><a href="https://seekingalpha.com/article/4873886-microsoft-is-in-a-bear-market-which-is-creating-a-major-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft will deliver 19.2% earnings growth through 2026, supporting a 28.3x forward P/E valuation multiple at current price levels (~$455/share)</span></td>
-              <td class="cell-catalyst"><span class="expandable">Realization of projected earnings growth trajectory and market acceptance of 28.3x multiple as justified by growth rate</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4861074-microsoft-the-134-billion-misunderstanding" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="position msft as dividend aristocrat candidate with strong revenue/earnings growth; reinforce long-hold thesis for income-focused portfolios based on management quality and sustainable competitive moat in cloud + ai." data-claims="msft will achieve dividend aristocrat status and should be held long-term due to strong revenue growth and management quality">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Position MSFT as dividend aristocrat candidate with strong revenue/earnings growth; reinforce long-hold thesis for income-focused portfolios based on management quality and sustainable competitive moat in cloud + AI.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-low">low</span>
-          <span class="evidence-count">1 source</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">MSFT will achieve dividend aristocrat status and should be held long-term due to strong revenue growth and management quality</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q1 2026 revenue of $77.7B (+18% YoY) demonstrates sustained growth momentum and operational execution</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-low">low</span></td>
-              <td><a href="https://seekingalpha.com/article/4851018-time-to-buy-this-future-dividend-aristocrat-microsoft" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="short" data-horizon="medium"
-         data-digest="flag that 7% stock decline post-q2 despite 16.7% revenue growth signals market concerns about cloud margin compression and decelerating ai infrastructure monetization; reassess if gross margins fall below 65%." data-claims="microsoft cloud growth is decelerating, evidenced by stock falling 7% on q2 fy2026 earnings despite 16.7% yoy revenue growth microsoft cloud gross margin will decline year-over-year to approximately 65%, driven by continued ai infrastructure investments">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Flag that 7% stock decline post-Q2 despite 16.7% revenue growth signals market concerns about Cloud margin compression and decelerating AI infrastructure monetization; reassess if gross margins fall below 65%.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">2 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft cloud growth is decelerating, evidenced by stock falling 7% on Q2 FY2026 earnings despite 16.7% YoY revenue growth</span></td>
-              <td class="cell-catalyst"><span class="expandable">Microsoft Q2 FY2026 earnings report (ended Dec 31, 2025) showed slowing cloud growth</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft Cloud gross margin will decline year-over-year to approximately 65%, driven by continued AI infrastructure investments</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q2 FY2026 earnings guidance disclosure; elevated capex for AI compute and data center buildout</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://seekingalpha.com/article/4863620-microsoft-corporation-msft-q2-2026-earnings-call-transcript" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="short" data-horizon="short"
-         data-digest="quantify downside risk from openai down-round impact on msft&#x27;s $13b investment and potential earnings headwind; model sensitivity to openai valuation write-down scenarios." data-claims="microsoft faces valuation pressure from openai down round given $13b investment exposure">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Quantify downside risk from OpenAI down-round impact on MSFT&#x27;s $13B investment and potential earnings headwind; model sensitivity to OpenAI valuation write-down scenarios.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">1 source</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Microsoft faces valuation pressure from OpenAI down round given $13B investment exposure</span></td>
-              <td class="cell-catalyst"><span class="expandable">OpenAI secondary market weakness signals overvaluation of AI investments</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://allinchamathjason.libsyn.com/spacex-ipo-iran-war-fallout-quantum-bitcoin-hack-the-space-opportunity" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
-              <td>2026-04-03</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-group open" data-ticker="NTR">
+<div class="ticker-group " data-ticker="NTR">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">NTR</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -877,13 +1203,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Nutrien benefits from fertilizer supply shock as alternative North American supplier</span></td>
               <td class="cell-catalyst"><span class="expandable">Iran war disrupts global fertilizer supply chains</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -896,425 +1221,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="NVDA">
-  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">NVDA</span>
-    <span class="ticker-stats">8 clusters / 23 theses</span>
-    <span class="ticker-arrow">&#9654;</span>
-  </div>
-  <div class="ticker-body">
-    <div class="cluster" data-direction="long" data-horizon="medium"
-         data-digest="execute long positions ahead of q1 2026 earnings given current-quarter guidance of $78b and q1 2026 revenue expectations of ~$43b both tracking above consensus." data-claims="current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion q1 2026 revenue will be approximately $43 billion with ±2% variance nvidia will continue to report strong financial results with earnings beats versus analyst expectations">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Execute long positions ahead of Q1 2026 earnings given current-quarter guidance of $78B and Q1 2026 revenue expectations of ~$43B both tracking above consensus.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">3 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion</span></td>
-              <td class="cell-catalyst"><span class="expandable">Nvidia&#x27;s official Q-current guidance announcement; revenue beats consensus by $5.4 billion or 7.4%</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/26/nvidia-posted-another-blockbuster-quarter-one-analyst-says-the-stock-is-a-coiled-spring.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Q1 2026 revenue will be approximately $43 billion with ±2% variance</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q4 2025 earnings guidance for Q1 2026</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4870798-nvidia-should-double-beat-again-earnings-preview" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Nvidia will continue to report strong financial results with earnings beats versus analyst expectations</span></td>
-              <td class="cell-catalyst"><span class="expandable">Consistent pattern of Q4 FY2026 beat (adjusted EPS $1.62 vs. $1.54 expected) validates track record of outperformance</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.fool.com/investing/2026/02/25/why-nvidia-stock-is-soaring-in-after-hours-trading/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="exploit margin expansion thesis by monitoring sustained 75% gross margins through fy2026 while 263% networking revenue growth demonstrates platform pricing power." data-claims="demand for nvidia chips will exceed supply for several quarters in fiscal 2026 due to supply chain constraints nvidia revenue will reach $65 billion in fiscal q4 2026 (plus or minus 2%), with gaap gross margin of 74.8% (plus or minus 50bps) nvidia will maintain gross margins of approximately 75% in full-year fy2026, demonstrating sustained pricing power in ai accelerators professional visualization revenue will exceed guidance by 75% with +159% yoy growth, reaching $1.32b versus streetaccount expectation of $755.4m networking revenue will grow 263% yoy driven by nvlink adoption and spectrum-x ethernet switch deployments with hyperscalers">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Exploit margin expansion thesis by monitoring sustained 75% gross margins through FY2026 while 263% networking revenue growth demonstrates platform pricing power.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">5 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Demand for NVIDIA chips will exceed supply for several quarters in fiscal 2026 due to supply chain constraints</span></td>
-              <td class="cell-catalyst"><span class="expandable">Supply chain constraints persist through FY2026, creating persistent chip shortage</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://finance.yahoo.com/news/nvidias-supply-snags-hurting-deliveries-021326703.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Nvidia revenue will reach $65 billion in fiscal Q4 2026 (plus or minus 2%), with GAAP gross margin of 74.8% (plus or minus 50bps)</span></td>
-              <td class="cell-catalyst"><span class="expandable">Fiscal Q4 2026 earnings announcement</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.fool.com/investing/2026/02/24/nvidia-stock-is-outperforming-the-market-in-2026-i/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Nvidia will maintain gross margins of approximately 75% in full-year FY2026, demonstrating sustained pricing power in AI accelerators</span></td>
-              <td class="cell-catalyst"><span class="expandable">Nvidia delivered 75.2% adjusted gross margin in fiscal Q4 2026 and guided for ~75% full-year margins</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.fool.com/investing/2026/03/04/what-nvidias-blockbuster-quarter-tells-us-about-th/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Professional visualization revenue will exceed guidance by 75% with +159% YoY growth, reaching $1.32B versus StreetAccount expectation of $755.4M</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q4 2026 earnings results and analyst expectations revision</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Networking revenue will grow 263% YoY driven by NVLink adoption and Spectrum-X Ethernet switch deployments with hyperscalers</span></td>
-              <td class="cell-catalyst"><span class="expandable">Meta and other hyperscaler deals for NVLink networking technology and Spectrum-X Ethernet switches</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="medium"
-         data-digest="rotate into next-generation upside by tracking vera rubin&#x27;s 10x power efficiency gains and groq lpx&#x27;s 35x token throughput as emerging growth drivers beyond current gpu cycle." data-claims="groq 3 lpx and vera rubin chips enable up to 35x improvement in token throughput, providing new growth catalyst nvidia benefits from anthropic&#x27;s compute scaling as model leader increases training/inference workloads nvidia&#x27;s revenue growth will continue to accelerate, reaching 62% yoy growth in q3 fy2026 and maintaining strong cash flow generation vera rubin rack-scale systems will deliver 10x energy efficiency improvement per watt versus grace blackwell, addressing data center power constraints">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Rotate into next-generation upside by tracking Vera Rubin&#x27;s 10x power efficiency gains and Groq LPX&#x27;s 35x token throughput as emerging growth drivers beyond current GPU cycle.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">4 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Groq 3 LPX and Vera Rubin chips enable up to 35x improvement in token throughput, providing new growth catalyst</span></td>
-              <td class="cell-catalyst"><span class="expandable">Product unveiling at Nvidia GTC conference; new chip architecture delivering measurable performance gains</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4885382-nvidia-stock-to-see-new-growth-catalyst-35x-faster-ai-with-groq-3-lpx" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Nvidia&#x27;s revenue growth will continue to accelerate, reaching 62% YoY growth in Q3 FY2026 and maintaining strong cash flow generation</span></td>
-              <td class="cell-catalyst"><span class="expandable">Continued AI chip demand and hyperscaler capex spending</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.fool.com/investing/2026/02/24/nvidia-stock-is-outperforming-the-market-in-2026-i/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Vera Rubin rack-scale systems will deliver 10x energy efficiency improvement per watt versus Grace Blackwell, addressing data center power constraints</span></td>
-              <td class="cell-catalyst"><span class="expandable">Vera Rubin commercial release later in 2026</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">NVIDIA benefits from Anthropic&#x27;s compute scaling as model leader increases training/inference workloads</span></td>
-              <td class="cell-catalyst"><span class="expandable">Anthropic model superiority driving enterprise adoption and compute demand</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://allinchamathjason.libsyn.com/anthropics-generational-run-openai-panics-ai-moats-meta-loses-lawsuits" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
-              <td>2026-03-27</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="hold core long position on $1t ai chip revenue by 2027 thesis, supported by expanding total addressable market including defense ai adoption and cash-generative business model." data-claims="nvidia will generate $1 trillion in ai chip revenue by 2027 defense ai adoption cycle creates incremental gpu demand as pentagon modernizes c2 systems with palantir-style ai decision support nvidia&#x27;s business model converts a massive share of sales directly into cash due to low capital intensity relative to data center operators, enabling substantial capital returns despite high growth">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Hold core long position on $1T AI chip revenue by 2027 thesis, supported by expanding total addressable market including defense AI adoption and cash-generative business model.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">3 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Nvidia will generate $1 trillion in AI chip revenue by 2027</span></td>
-              <td class="cell-catalyst"><span class="expandable">Nvidia GTC conference announcement of Groq 3 LPX and Vera Rubin chips with 35x token throughput improvement</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-low">low</span></td>
-              <td><a href="https://seekingalpha.com/article/4885382-nvidia-stock-to-see-new-growth-catalyst-35x-faster-ai-with-groq-3-lpx" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Nvidia&#x27;s business model converts a massive share of sales directly into cash due to low capital intensity relative to data center operators, enabling substantial capital returns despite high growth</span></td>
-              <td class="cell-catalyst"><span class="expandable">Continued demand for AI chips and maintenance of high gross margins as the company scales</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.fool.com/investing/2026/03/10/dont-overlook-this-under-the-radar-bull-case-for-n/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Defense AI adoption cycle creates incremental GPU demand as Pentagon modernizes C2 systems with Palantir-style AI decision support</span></td>
-              <td class="cell-catalyst"><span class="expandable">Autonomous weapons and AI decision-making discussion highlights Pentagon&#x27;s AI infrastructure needs</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-low">low</span></td>
-              <td><a href="https://allinchamathjason.libsyn.com/the-state-of-modern-war-palantir-anduril-execs-on-drones-ai-and-the-end-of-traditional-warfare" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
-              <td>2026-04-06</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="medium"
-         data-digest="nand flash memory supply scarcity enables sandisk to achieve record-breaking earnings through significant price increases" data-claims="nand flash memory supply scarcity enables sandisk to achieve record-breaking earnings through significant price increases">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">NAND flash memory supply scarcity enables SanDisk to achieve record-breaking earnings through significant price increases</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">1 source</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">NAND flash memory supply scarcity enables SanDisk to achieve record-breaking earnings through significant price increases</span></td>
-              <td class="cell-catalyst"><span class="expandable">Global shortage of NAND flash memory persists</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4882807-sandisk-this-nvidia-gtc-2026-announcement-could-be-a-gamechanger" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="maintain long conviction on 40% data center gpu growth through 2027 backed by $650b hyperscaler capex cycle and $100b openai partnership securing multi-year demand." data-claims="hyperscalers will spend nearly $650 billion on capex in 2026, with a significant portion directed toward ai data centers strong nvidia fy2026 q4 results and better-than-expected guidance indicate sustained hyperscaler ai infrastructure investment cycle openai partnership agreement worth $100b will finalize, securing long-term ai chip demand and revenue stream data center gpu revenue grows 40% yoy through 2027">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Maintain long conviction on 40% data center GPU growth through 2027 backed by $650B hyperscaler capex cycle and $100B OpenAI partnership securing multi-year demand.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">4 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Hyperscalers will spend nearly $650 billion on capex in 2026, with a significant portion directed toward AI data centers</span></td>
-              <td class="cell-catalyst"><span class="expandable">Continued AI infrastructure buildout and adoption of large language models by hyperscalers</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4885348-memory-new-bottleneck-in-ai-semiconductors" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Strong Nvidia FY2026 Q4 results and better-than-expected guidance indicate sustained hyperscaler AI infrastructure investment cycle</span></td>
-              <td class="cell-catalyst"><span class="expandable">Nvidia beat earnings expectations and issued above-consensus forward guidance in fiscal Q4 2026</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.fool.com/investing/2026/03/04/what-nvidias-blockbuster-quarter-tells-us-about-th/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">OpenAI partnership agreement worth $100B will finalize, securing long-term AI chip demand and revenue stream</span></td>
-              <td class="cell-catalyst"><span class="expandable">Finalization of $100B partnership agreement announced in September 2025</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Data center GPU revenue grows 40% YoY through 2027</span></td>
-              <td class="cell-catalyst"><span class="expandable">Hyperscaler capex commits</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://youtube.com/watch?v=mock_v3_ep1" target="_blank" rel="noopener">youtube.com</a></td>
-              <td>2026-04-07</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="short" data-horizon="medium"
-         data-digest="hedge long exposure against downside scenario where hyperscaler capex disappoints due to unresolved ai monetization concerns and quantum computing roi uncertainty." data-claims="market expectations for sustained ai infrastructure spending growth are misaligned with actual capital deployment plans, particularly given openai deal failure ai capex spending sustainability is deteriorating due to concerns around monetization, quantum computing roi, and potential cashflow degradation">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Hedge long exposure against downside scenario where hyperscaler capex disappoints due to unresolved AI monetization concerns and quantum computing ROI uncertainty.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">2 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Market expectations for sustained AI infrastructure spending growth are misaligned with actual capital deployment plans, particularly given OpenAI deal failure</span></td>
-              <td class="cell-catalyst"><span class="expandable">Stalled $100 billion OpenAI-Nvidia deal signals potential pullback in megacap capex commitments</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">AI capex spending sustainability is deteriorating due to concerns around monetization, quantum computing ROI, and potential cashflow degradation</span></td>
-              <td class="cell-catalyst"><span class="expandable">Nvidia&#x27;s $100 billion OpenAI deal stalling and Q4 earnings guidance failing to address capex sustainability questions</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html" target="_blank" rel="noopener">cnbc.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="short" data-horizon="long"
-         data-digest="reduce position size or implement collars if single-digit growth emerges in 2026, signaling transition to mature-phase multiples and earnings multiple compression." data-claims="nvda stock will dip into single-digit percentage growth rates in 2026, indicating transition to low-growth business">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Reduce position size or implement collars if single-digit growth emerges in 2026, signaling transition to mature-phase multiples and earnings multiple compression.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-short">short</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-low">low</span>
-          <span class="evidence-count">1 source</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">NVDA stock will dip into single-digit percentage growth rates in 2026, indicating transition to low-growth business</span></td>
-              <td class="cell-catalyst"><span class="expandable">NVDA earnings announcement and market reaction to forward guidance</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-low">low</span></td>
-              <td><a href="https://www.fool.com/investing/2026/03/06/nvidia-posts-earnings-wall-street-says-thats-it/" target="_blank" rel="noopener">fool.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-group open" data-ticker="PLTR">
+<div class="ticker-group " data-ticker="PLTR">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">PLTR</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -1333,13 +1243,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">US-China military technology gap and 2027 Taiwan threat timeline drives accelerated defense software and AI adoption</span></td>
               <td class="cell-catalyst"><span class="expandable">Heightened US-China tensions with specific 2027 Taiwan invasion threat window identified by defense community</span></td>
-              <td></td>
               <td><span class="pill pill-long">long</span></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-low">low</span></td>
@@ -1352,10 +1261,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="RKLB">
+<div class="ticker-group " data-ticker="RKLB">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">RKLB</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -1374,13 +1283,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Rocket Lab faces increased competition and valuation compression from SpaceX IPO</span></td>
               <td class="cell-catalyst"><span class="expandable">SpaceX IPO provides public market alternative for space exposure</span></td>
-              <td></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -1393,10 +1301,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="RTX">
+<div class="ticker-group " data-ticker="RTX">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">RTX</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -1415,13 +1323,12 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Traditional defense prime suffers margin pressure as Pentagon shifts procurement toward agile software-first entrants like Palantir/Anduril</span></td>
               <td class="cell-catalyst"><span class="expandable">Arsenal-1 and software-defined warfare demonstrate 10x cost advantages over legacy programs</span></td>
-              <td></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
@@ -1434,10 +1341,10 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     </div>
   </div>
 </div>
-<div class="ticker-group open" data-ticker="SOCL">
+<div class="ticker-group " data-ticker="SOCL">
   <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
     <span class="ticker-name">SOCL</span>
-    <span class="ticker-stats">1 clusters / 1 theses</span>
+    <span class="ticker-stats">1 cluster / 1 theses</span>
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
@@ -1456,355 +1363,17 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
       <div class="evidence">
         <table>
           <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
+            <th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
           </tr></thead>
           <tbody>
             <tr>
               <td class="cell-claim"><span class="expandable">Social media sector faces regulatory/liability expansion following Meta verdicts</span></td>
               <td class="cell-catalyst"><span class="expandable">Two landmark verdicts create legal precedent for platform liability</span></td>
-              <td></td>
               <td><span class="pill pill-short">short</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><span class="pill pill-medium">medium</span></td>
               <td><a href="https://allinchamathjason.libsyn.com/anthropics-generational-run-openai-panics-ai-moats-meta-loses-lawsuits" target="_blank" rel="noopener">allinchamathjason.libsyn.com</a></td>
               <td>2026-03-27</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ticker-group open" data-ticker="TSM">
-  <div class="ticker-header" onclick="this.parentElement.classList.toggle('open')">
-    <span class="ticker-name">TSM</span>
-    <span class="ticker-stats">4 clusters / 24 theses</span>
-    <span class="ticker-arrow">&#9654;</span>
-  </div>
-  <div class="ticker-body">
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="build a position around tsmc&#x27;s pricing power: tight advanced-node capacity through 2026-27 supports margin expansion and price increases despite near-term capex headwinds." data-claims="q1 2026 revenue will reach $34.6-$35.8 billion, representing 38% year-over-year growth at midpoint tsm stock will continue outperforming the s&amp;p 500 through 2026 tsmc q1 2026 revenue will reach $34.6b–$35.8b, representing 4% sequential growth and 38% year-over-year growth tsmc advanced-node capacity pricing will increase in 2026 due to demand exceeding supply tsmc remains a top ai chip pick due to tight capacity and strong competitive moat despite samsung and intel threats current capex trajectory will lag exponential ai compute demand, creating supply bottlenecks ai-related revenue will grow at 40%+ cagr tsmc will implement price increases due to supply shortages and strong demand for semiconductor capacity tsmc will remain the primary wafer supply bottleneck for semiconductor industry through 2026 tsmc q4 revenue exceeded forecasts at $104.6 billion, signaling strong semiconductor demand revenue and eps expected to grow approximately 20% through 2026 tsm will achieve margin expansion through leadership in advanced ai and hpc chip manufacturing tsm will increase dividend by 20% based on strong earnings performance and cash generation tsm will deliver 36% revenue growth in next quarter driven by ai and high-performance computing demand tsm will achieve 5-year revenue cagr in the high 40s to 50% range">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Build a position around TSMC&#x27;s pricing power: tight advanced-node capacity through 2026-27 supports margin expansion and price increases despite near-term CapEx headwinds.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">15 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Q1 2026 revenue will reach $34.6-$35.8 billion, representing 38% year-over-year growth at midpoint</span></td>
-              <td class="cell-catalyst"><span class="expandable">TSMC Q1 2026 earnings announcement and revenue realization</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://finance.yahoo.com/news/tsmc-raises-dividend-28-while-183325113.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSM stock will continue outperforming the S&amp;P 500 through 2026</span></td>
-              <td class="cell-catalyst"><span class="expandable">Sustained earnings growth and market rotation toward semiconductor strength</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-low">low</span></td>
-              <td><a href="https://seekingalpha.com/article/4858939-taiwan-semiconductor-another-blowout-earnings-look-inevitable" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC Q1 2026 revenue will reach $34.6B–$35.8B, representing 4% sequential growth and 38% year-over-year growth</span></td>
-              <td class="cell-catalyst"><span class="expandable">AI chip demand sustains high utilization of TSMC manufacturing capacity; customer capex cycles remain elevated</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://seekingalpha.com/news/4539308-tsm-rises-after-q4-profit-surges-amid-ai-boom-plans-more-us-factories" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC advanced-node capacity pricing will increase in 2026 due to demand exceeding supply</span></td>
-              <td class="cell-catalyst"><span class="expandable">Sustained high demand from key customers (Apple, Nvidia) securing future production commitments</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4850620-tsmc-the-demand-remains-unmet-and-prices-will-increase-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC remains a top AI chip pick due to tight capacity and strong competitive moat despite Samsung and Intel threats</span></td>
-              <td class="cell-catalyst"><span class="expandable">Continued AI chip demand maintaining high utilization rates and pricing power</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4880959-tsmc-recent-fears-make-this-another-bargain-buying-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Current CapEx trajectory will lag exponential AI compute demand, creating supply bottlenecks</span></td>
-              <td class="cell-catalyst"><span class="expandable">AI chip demand exceeds TSMC&#x27;s manufacturing capacity expansion timeline</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4830942-tsmc-the-ai-bottleneck" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">AI-related revenue will grow at 40%+ CAGR</span></td>
-              <td class="cell-catalyst"><span class="expandable">Sustained hyperscaler demand for advanced chip manufacturing capacity</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4830942-tsmc-the-ai-bottleneck" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC will implement price increases due to supply shortages and strong demand for semiconductor capacity</span></td>
-              <td class="cell-catalyst"><span class="expandable">Aggressive capacity ramp-up in 2026 to clear backlog of customer orders</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4850968-tsmc-unmatched-moat-secular-ai-tailwinds-and-still-a-buy-at-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC will remain the primary wafer supply bottleneck for semiconductor industry through 2026</span></td>
-              <td class="cell-catalyst"><span class="expandable">Continued tight supply conditions persist into 2026 as demand outpaces manufacturing capacity</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://seekingalpha.com/article/4860033-taiwan-semiconductor-manufacturing-company-limited-tsm-q4-2025-earnings-call-transcript" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC Q4 revenue exceeded forecasts at $104.6 billion, signaling strong semiconductor demand</span></td>
-              <td class="cell-catalyst"><span class="expandable">Full Q4 earnings report and updated Q1 guidance announcement on January 15</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://www.reuters.com/world/asia-pacific/tsmc-posts-q4-revenue-104608-billion-above-forecasts-2026-01-09/" target="_blank" rel="noopener">reuters.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Revenue and EPS expected to grow approximately 20% through 2026</span></td>
-              <td class="cell-catalyst"><span class="expandable">Robust AI-driven demand and strong execution by Taiwan Semiconductor</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4850765-taiwan-semiconductor-i-dont-think-growth-is-about-to-end" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSM will achieve margin expansion through leadership in advanced AI and HPC chip manufacturing</span></td>
-              <td class="cell-catalyst"><span class="expandable">Continued AI tailwinds driving high-margin advanced node demand; Q4 results demonstrate margin improvement</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSM will increase dividend by 20% based on strong earnings performance and cash generation</span></td>
-              <td class="cell-catalyst"><span class="expandable">Q4 double beat on revenue and EPS; margin expansion from advanced chip manufacturing</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSM will deliver 36% revenue growth in next quarter driven by AI and high-performance computing demand</span></td>
-              <td class="cell-catalyst"><span class="expandable">Company guidance for 36% sequential revenue growth; AI chip manufacturing leadership position</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSM will achieve 5-year revenue CAGR in the high 40s to 50% range</span></td>
-              <td class="cell-catalyst"><span class="expandable">Rapid foundry market share gains and Nvidia H200 demand for China shipments</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4857005-tsmc-relentlessly-getting-stronger-market-mispricing-it" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="expect tsmc earnings and roi metrics to weaken temporarily in 2026 as elevated capex ($52-56b) outpaces revenue growth; plan for margin recovery post-2027 when capacity utilization normalizes." data-claims="advanced packaging capacity and chip supply constraints will be alleviated through tsmc&#x27;s overseas expansion initiative capex will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion high capex in 2026 will initially dilute tsmc&#x27;s financial metrics (earnings, margins, or returns)">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Expect TSMC earnings and ROI metrics to weaken temporarily in 2026 as elevated CapEx ($52-56B) outpaces revenue growth; plan for margin recovery post-2027 when capacity utilization normalizes.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-high">high</span>
-          <span class="evidence-count">3 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Advanced packaging capacity and chip supply constraints will be alleviated through TSMC&#x27;s overseas expansion initiative</span></td>
-              <td class="cell-catalyst"><span class="expandable">Current AI supercycle outpacing semiconductor supply; TSMC capital deployment overseas</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4860498-tsmc-strong-buy-the-ai-supercycle-is-outrunning-chip-supply" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">CapEx will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion</span></td>
-              <td class="cell-catalyst"><span class="expandable">AI supercycle demand outrunning chip supply; need to address capacity bottlenecks</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-high">high</span></td>
-              <td><a href="https://seekingalpha.com/article/4860498-tsmc-strong-buy-the-ai-supercycle-is-outrunning-chip-supply" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">High capex in 2026 will initially dilute TSMC&#x27;s financial metrics (earnings, margins, or returns)</span></td>
-              <td class="cell-catalyst"><span class="expandable">$52–56 billion capex deployment for 2nm production capacity</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://finance.yahoo.com/news/taiwan-semiconductor-manufacturing-company-limited-003257145.html" target="_blank" rel="noopener">finance.yahoo.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="monitor taiwan geopolitical and supply-chain risk: despite planned capacity builds, tsmc will face supply constraints in 2026-27, creating both upside (pricing) and downside (customer frustration) scenarios." data-claims="taiwan semiconductor manufacturing capacity becomes a supply chain bottleneck in 2026, despite capacity increases planned through 2027 tsmc will launch 3nm chip production in japan by 2028 tsm&#x27;s second arizona fab will achieve 3nm production in 2027 instead of 2028, accelerating advanced-node us revenue pull-forward">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Monitor Taiwan geopolitical and supply-chain risk: despite planned capacity builds, TSMC will face supply constraints in 2026-27, creating both upside (pricing) and downside (customer frustration) scenarios.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">3 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Taiwan Semiconductor manufacturing capacity becomes a supply chain bottleneck in 2026, despite capacity increases planned through 2027</span></td>
-              <td class="cell-catalyst"><span class="expandable">Semiconductor manufacturers increase production capacity but fail to meet demand growth; supply constraints emerge in 2026 before new capacity comes online in 2027</span></td>
-              <td></td>
-              <td><span class="pill pill-short">short</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/news/4567653-broadcom-exec-taiwan-semiconductor-ai-chip-supply" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC will launch 3nm chip production in Japan by 2028</span></td>
-              <td class="cell-catalyst"><span class="expandable">TSMC&#x27;s geographic expansion strategy and Japanese government support/incentives</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4850620-tsmc-the-demand-remains-unmet-and-prices-will-increase-in-2026" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSM&#x27;s second Arizona fab will achieve 3nm production in 2027 instead of 2028, accelerating advanced-node US revenue pull-forward</span></td>
-              <td class="cell-catalyst"><span class="expandable">Acceleration of Arizona fab construction and ramp timeline</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4857005-tsmc-relentlessly-getting-stronger-market-mispricing-it" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="cluster" data-direction="long" data-horizon="long"
-         data-digest="recent stock weakness presents a tactical entry point for long-term holders, as 2026 revenue growth (38% yoy) and ai/hpc diversification justify current valuations despite short-term capex drag." data-claims="recent market selloff represents a buying opportunity with continued growth ahead tsmc is not purely an ai-exposure play but rather a diversified semiconductor manufacturer with exposure to multiple tech sectors beyond ai, justifying buy-and-hold strategy tsmc stock represents a strong buy opportunity following recent price weakness, with robust ai-driven demand supporting long-term appreciation">
-      <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="cluster-arrow">&#9654;</span>
-        <span class="cluster-digest">Recent stock weakness presents a tactical entry point for long-term holders, as 2026 revenue growth (38% YoY) and AI/HPC diversification justify current valuations despite short-term CapEx drag.</span>
-        <span class="cluster-meta">
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-long">long</span>
-          <span class="pill pill-medium">medium</span>
-          <span class="evidence-count">3 sources</span>
-        </span>
-      </div>
-      <div class="evidence">
-        <table>
-          <thead><tr>
-            <th>Claim</th><th>Catalyst</th><th>Type</th><th>Dir</th><th>Horizon</th><th>Conf</th><th>Source</th><th>Date</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td class="cell-claim"><span class="expandable">Recent market selloff represents a buying opportunity with continued growth ahead</span></td>
-              <td class="cell-catalyst"><span class="expandable">AI-driven demand fundamentals remain intact despite near-term price weakness</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4850765-taiwan-semiconductor-i-dont-think-growth-is-about-to-end" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC is not purely an AI-exposure play but rather a diversified semiconductor manufacturer with exposure to multiple tech sectors beyond AI, justifying buy-and-hold strategy</span></td>
-              <td class="cell-catalyst"><span class="expandable">Earnings announcements demonstrating revenue diversification across non-AI segments</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4888106-tsmc-much-more-than-just-ai-play-recent-jitters-present-great-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
-            </tr>
-            <tr>
-              <td class="cell-claim"><span class="expandable">TSMC stock represents a strong buy opportunity following recent price weakness, with robust AI-driven demand supporting long-term appreciation</span></td>
-              <td class="cell-catalyst"><span class="expandable">Share price retreat from all-time highs; upcoming earnings over next two weeks; geopolitical volatility creating entry points</span></td>
-              <td></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-long">long</span></td>
-              <td><span class="pill pill-medium">medium</span></td>
-              <td><a href="https://seekingalpha.com/article/4888106-tsmc-much-more-than-just-ai-play-recent-jitters-present-great-opportunity" target="_blank" rel="noopener">seekingalpha.com</a></td>
-              <td>2026-04-10</td>
             </tr>
           </tbody>
         </table>
