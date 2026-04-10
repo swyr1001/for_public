@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thesis Table</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #1a1a1a; color: #d4d4d4; font-family: -apple-system, system-ui, sans-serif; font-size: 14px; }
+.container { padding: 12px; max-width: 100%; overflow-x: auto; }
+h1 { font-size: 18px; color: #c8b560; margin-bottom: 4px; }
+.meta { font-size: 11px; color: #888; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 700px; }
+thead { position: sticky; top: 0; z-index: 2; }
+th { background: #2a2a2a; color: #c8b560; padding: 8px 6px; text-align: left; cursor: pointer;
+     border-bottom: 2px solid #444; white-space: nowrap; font-size: 12px; user-select: none; }
+th:hover { background: #333; }
+th .arrow { font-size: 10px; margin-left: 3px; color: #888; }
+th .arrow.active { color: #c8b560; }
+.filters th { padding: 4px; background: #222; cursor: default; }
+.filters input, .filters select { width: 100%; background: #1a1a1a; color: #d4d4d4; border: 1px solid #444;
+     border-radius: 3px; padding: 4px; font-size: 12px; }
+td { padding: 6px; border-bottom: 1px solid #2a2a2a; vertical-align: top; font-size: 13px; }
+tr:hover td { background: #222; }
+.cell-claim, .cell-catalyst { max-width: 280px; }
+.cell-claim span, .cell-catalyst span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+     overflow: hidden; cursor: pointer; }
+.cell-claim span.expanded, .cell-catalyst span.expanded { -webkit-line-clamp: unset; }
+.cell-ticker { font-weight: 700; color: #c8b560; white-space: nowrap; }
+.cell-source a { color: #6b9bd2; text-decoration: none; font-size: 11px; word-break: break-all; }
+.cell-source a:hover { text-decoration: underline; }
+.pill { display: inline-block; padding: 1px 6px; border-radius: 8px; font-size: 11px; font-weight: 600; }
+.pill-long { background: #1a3a1a; color: #6bca6b; }
+.pill-short { background: #3a1a1a; color: #ca6b6b; }
+.pill-neutral { background: #2a2a1a; color: #caca6b; }
+.pill-high { background: #1a3a1a; color: #6bca6b; }
+.pill-medium { background: #2a2a1a; color: #caca6b; }
+.pill-low { background: #3a1a1a; color: #ca6b6b; }
+.empty { text-align: center; padding: 40px; color: #666; }
+.count { font-size: 12px; color: #888; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Thesis Table</h1>
+<div class="meta">Data from: 2026-04-10 | Page built: 2026-04-10 04:50 UTC</div>
+<div class="count"><span id="rowcount"></span> theses</div>
+<table>
+<thead>
+<tr id="headers"></tr>
+<tr class="filters" id="filters"></tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<script>
+const ROWS = [{"ticker": "MSFT", "claim": "Power delivery and electrical infrastructure becomes a bottleneck for AI data center expansion in 2026", "catalyst": "Hyperscaler power consumption requirements exceed grid capacity and PSU/power module supply", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Optical interconnect and networking components become supply-constrained as AI clusters scale in 2026", "catalyst": "Demand for high-speed optical transceivers and interconnect solutions exceeds manufacturing capacity", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Memory becomes a supply bottleneck for AI infrastructure in 2026, shifting from GPU-centric constraints", "catalyst": "AI model training and inference demands exceed memory supply capacity as GPU availability increases", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4855448-how-to-profit-from-the-coming-ai-supply-shocks-in-2026", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft will generate revenue growth from commercial Office productivity software price increases effective July 2025", "catalyst": "Microsoft announced commercial Office subscription price increases during Q2 FY2026", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft will generate substantial cloud services revenue from Anthropic's $30 billion cloud services commitment and up to 1 gigawatt additional computing capacity contract", "catalyst": "Anthropic announced $30 billion commitment to buy cloud services and up to 1 gigawatt additional computing capacity from Microsoft", "horizon": "long", "position_side": "long", "confidence": "high", "source_url": "https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft cloud growth is decelerating, evidenced by stock falling 7% on Q2 FY2026 earnings despite 16.7% YoY revenue growth", "catalyst": "Microsoft Q2 FY2026 earnings report (ended Dec 31, 2025) showed slowing cloud growth", "horizon": "short", "position_side": "short", "confidence": "high", "source_url": "https://www.cnbc.com/2026/01/28/microsoft-msft-q2-earnings-report-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "MSFT is trading at 23.72x 2026 forward earnings with consensus EPS estimates of $23.72 for 2026, suggesting the stock is at fair valuation multiples relative to earnings growth", "catalyst": "Market repricing of MSFT valuation as it enters bear market territory, creating entry opportunity at normalized multiples", "horizon": "long", "position_side": "long", "confidence": "low", "source_url": "https://seekingalpha.com/article/4873886-microsoft-is-in-a-bear-market-which-is-creating-a-major-opportunity", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft Cloud gross margin will decline year-over-year to approximately 65%, driven by continued AI infrastructure investments", "catalyst": "Q2 FY2026 earnings guidance disclosure; elevated capex for AI compute and data center buildout", "horizon": "medium", "position_side": "short", "confidence": "high", "source_url": "https://seekingalpha.com/article/4863620-microsoft-corporation-msft-q2-2026-earnings-call-transcript", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Commercial bookings momentum will sustain with 112% YoY growth and RPO of $392B (+51% YoY), indicating strong enterprise AI adoption and multi-year commit trends", "catalyst": "Q1 FY26 commercial bookings surged 112% YoY with RPO up 51% to $392B", "horizon": "medium", "position_side": "long", "confidence": "high", "source_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft Cloud revenue will grow 26% YoY with Microsoft Cloud reaching $49.1B in Q1 FY26, driven by AI workload adoption", "catalyst": "Q1 FY26 results showed 26% YoY growth in Microsoft Cloud revenue to $49.1B", "horizon": "medium", "position_side": "long", "confidence": "high", "source_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Azure will remain capacity-constrained through FY26 due to accelerating AI demand, requiring sustained elevated CapEx spending", "catalyst": "Management raised CapEx guidance and confirmed Azure capacity constraints persist through end of FY26", "horizon": "medium", "position_side": "long", "confidence": "high", "source_url": "https://finance.yahoo.com/quote/MSFT/earnings/MSFT-Q1-2026-earnings_call-368945.html/", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft will deliver 19.2% earnings growth through 2026, supporting a 28.3x forward P/E valuation multiple at current price levels (~$455/share)", "catalyst": "Realization of projected earnings growth trajectory and market acceptance of 28.3x multiple as justified by growth rate", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4861074-microsoft-the-134-billion-misunderstanding", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "Microsoft revenue growth accelerating at 18% YoY in fiscal 2026, with operating income growth outpacing at 24% YoY", "catalyst": "Strong fiscal 2026 start with $77.7B total revenue and $38.0B operating income", "horizon": "medium", "position_side": "long", "confidence": "high", "source_url": "https://finance.yahoo.com/news/microsoft-corporation-msft-bull-case-182607326.html", "retrieved_date": "2026-04-10"}, {"ticker": "MSFT", "claim": "MSFT will achieve dividend aristocrat status and should be held long-term due to strong revenue growth and management quality", "catalyst": "Q1 2026 revenue of $77.7B (+18% YoY) demonstrates sustained growth momentum and operational execution", "horizon": "long", "position_side": "long", "confidence": "low", "source_url": "https://seekingalpha.com/article/4851018-time-to-buy-this-future-dividend-aristocrat-microsoft", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "Advanced packaging capacity and chip supply constraints will be alleviated through TSMC's overseas expansion initiative", "catalyst": "Current AI supercycle outpacing semiconductor supply; TSMC capital deployment overseas", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4860498-tsmc-strong-buy-the-ai-supercycle-is-outrunning-chip-supply", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "CapEx will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion", "catalyst": "AI supercycle demand outrunning chip supply; need to address capacity bottlenecks", "horizon": "long", "position_side": "long", "confidence": "high", "source_url": "https://seekingalpha.com/article/4860498-tsmc-strong-buy-the-ai-supercycle-is-outrunning-chip-supply", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSMC remains a top AI chip pick due to tight capacity and strong competitive moat despite Samsung and Intel threats", "catalyst": "Continued AI chip demand maintaining high utilization rates and pricing power", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4880959-tsmc-recent-fears-make-this-another-bargain-buying-opportunity", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "Current CapEx trajectory will lag exponential AI compute demand, creating supply bottlenecks", "catalyst": "AI chip demand exceeds TSMC's manufacturing capacity expansion timeline", "horizon": "medium", "position_side": "short", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4830942-tsmc-the-ai-bottleneck", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "AI-related revenue will grow at 40%+ CAGR", "catalyst": "Sustained hyperscaler demand for advanced chip manufacturing capacity", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4830942-tsmc-the-ai-bottleneck", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSMC will implement price increases due to supply shortages and strong demand for semiconductor capacity", "catalyst": "Aggressive capacity ramp-up in 2026 to clear backlog of customer orders", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4850968-tsmc-unmatched-moat-secular-ai-tailwinds-and-still-a-buy-at-highs", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSMC will remain the primary wafer supply bottleneck for semiconductor industry through 2026", "catalyst": "Continued tight supply conditions persist into 2026 as demand outpaces manufacturing capacity", "horizon": "long", "position_side": "long", "confidence": "high", "source_url": "https://seekingalpha.com/article/4860033-taiwan-semiconductor-manufacturing-company-limited-tsm-q4-2025-earnings-call-transcript", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSMC Q4 revenue exceeded forecasts at $104.6 billion, signaling strong semiconductor demand", "catalyst": "Full Q4 earnings report and updated Q1 guidance announcement on January 15", "horizon": "short", "position_side": "long", "confidence": "high", "source_url": "https://www.reuters.com/world/asia-pacific/tsmc-posts-q4-revenue-104608-billion-above-forecasts-2026-01-09/", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "Recent market selloff represents a buying opportunity with continued growth ahead", "catalyst": "AI-driven demand fundamentals remain intact despite near-term price weakness", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4850765-taiwan-semiconductor-i-dont-think-growth-is-about-to-end", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "Revenue and EPS expected to grow approximately 20% through 2026", "catalyst": "Robust AI-driven demand and strong execution by Taiwan Semiconductor", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4850765-taiwan-semiconductor-i-dont-think-growth-is-about-to-end", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSM will achieve margin expansion through leadership in advanced AI and HPC chip manufacturing", "catalyst": "Continued AI tailwinds driving high-margin advanced node demand; Q4 results demonstrate margin improvement", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSM will increase dividend by 20% based on strong earnings performance and cash generation", "catalyst": "Q4 double beat on revenue and EPS; margin expansion from advanced chip manufacturing", "horizon": "short", "position_side": "long", "confidence": "high", "source_url": "https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSM will deliver 36% revenue growth in next quarter driven by AI and high-performance computing demand", "catalyst": "Company guidance for 36% sequential revenue growth; AI chip manufacturing leadership position", "horizon": "short", "position_side": "long", "confidence": "high", "source_url": "https://seekingalpha.com/article/4860205-taiwan-semiconductor-soaring-to-new-all-time-highs", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSM's second Arizona fab will achieve 3nm production in 2027 instead of 2028, accelerating advanced-node US revenue pull-forward", "catalyst": "Acceleration of Arizona fab construction and ramp timeline", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4857005-tsmc-relentlessly-getting-stronger-market-mispricing-it", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSM will achieve 5-year revenue CAGR in the high 40s to 50% range", "catalyst": "Rapid foundry market share gains and Nvidia H200 demand for China shipments", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4857005-tsmc-relentlessly-getting-stronger-market-mispricing-it", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "High capex in 2026 will initially dilute TSMC's financial metrics (earnings, margins, or returns)", "catalyst": "$52–56 billion capex deployment for 2nm production capacity", "horizon": "medium", "position_side": "short", "confidence": "medium", "source_url": "https://finance.yahoo.com/news/taiwan-semiconductor-manufacturing-company-limited-003257145.html", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSMC is not purely an AI-exposure play but rather a diversified semiconductor manufacturer with exposure to multiple tech sectors beyond AI, justifying buy-and-hold strategy", "catalyst": "Earnings announcements demonstrating revenue diversification across non-AI segments", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4888106-tsmc-much-more-than-just-ai-play-recent-jitters-present-great-opportunity", "retrieved_date": "2026-04-10"}, {"ticker": "TSM", "claim": "TSMC stock represents a strong buy opportunity following recent price weakness, with robust AI-driven demand supporting long-term appreciation", "catalyst": "Share price retreat from all-time highs; upcoming earnings over next two weeks; geopolitical volatility creating entry points", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4888106-tsmc-much-more-than-just-ai-play-recent-jitters-present-great-opportunity", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "NAND flash memory supply scarcity enables SanDisk to achieve record-breaking earnings through significant price increases", "catalyst": "Global shortage of NAND flash memory persists", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4882807-sandisk-this-nvidia-gtc-2026-announcement-could-be-a-gamechanger", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Demand for NVIDIA chips will exceed supply for several quarters in fiscal 2026 due to supply chain constraints", "catalyst": "Supply chain constraints persist through FY2026, creating persistent chip shortage", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://finance.yahoo.com/news/nvidias-supply-snags-hurting-deliveries-021326703.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Hyperscalers will spend nearly $650 billion on capex in 2026, with a significant portion directed toward AI data centers", "catalyst": "Continued AI infrastructure buildout and adoption of large language models by hyperscalers", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://seekingalpha.com/article/4885348-memory-new-bottleneck-in-ai-semiconductors", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Nvidia's revenue growth will continue to accelerate, reaching 62% YoY growth in Q3 FY2026 and maintaining strong cash flow generation", "catalyst": "Continued AI chip demand and hyperscaler capex spending", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://www.fool.com/investing/2026/02/24/nvidia-stock-is-outperforming-the-market-in-2026-i/", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Nvidia revenue will reach $65 billion in fiscal Q4 2026 (plus or minus 2%), with GAAP gross margin of 74.8% (plus or minus 50bps)", "catalyst": "Fiscal Q4 2026 earnings announcement", "horizon": "short", "position_side": "long", "confidence": "high", "source_url": "https://www.fool.com/investing/2026/02/24/nvidia-stock-is-outperforming-the-market-in-2026-i/", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Nvidia will continue to report strong financial results with earnings beats versus analyst expectations", "catalyst": "Consistent pattern of Q4 FY2026 beat (adjusted EPS $1.62 vs. $1.54 expected) validates track record of outperformance", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://www.fool.com/investing/2026/02/25/why-nvidia-stock-is-soaring-in-after-hours-trading/", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Market expectations for sustained AI infrastructure spending growth are misaligned with actual capital deployment plans, particularly given OpenAI deal failure", "catalyst": "Stalled $100 billion OpenAI-Nvidia deal signals potential pullback in megacap capex commitments", "horizon": "medium", "position_side": "short", "confidence": "medium", "source_url": "https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "AI capex spending sustainability is deteriorating due to concerns around monetization, quantum computing ROI, and potential cashflow degradation", "catalyst": "Nvidia's $100 billion OpenAI deal stalling and Q4 earnings guidance failing to address capex sustainability questions", "horizon": "medium", "position_side": "short", "confidence": "medium", "source_url": "https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Strong Nvidia FY2026 Q4 results and better-than-expected guidance indicate sustained hyperscaler AI infrastructure investment cycle", "catalyst": "Nvidia beat earnings expectations and issued above-consensus forward guidance in fiscal Q4 2026", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://www.fool.com/investing/2026/03/04/what-nvidias-blockbuster-quarter-tells-us-about-th/", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Nvidia will maintain gross margins of approximately 75% in full-year FY2026, demonstrating sustained pricing power in AI accelerators", "catalyst": "Nvidia delivered 75.2% adjusted gross margin in fiscal Q4 2026 and guided for ~75% full-year margins", "horizon": "medium", "position_side": "long", "confidence": "high", "source_url": "https://www.fool.com/investing/2026/03/04/what-nvidias-blockbuster-quarter-tells-us-about-th/", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "OpenAI partnership agreement worth $100B will finalize, securing long-term AI chip demand and revenue stream", "catalyst": "Finalization of $100B partnership agreement announced in September 2025", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Professional visualization revenue will exceed guidance by 75% with +159% YoY growth, reaching $1.32B versus StreetAccount expectation of $755.4M", "catalyst": "Q4 2026 earnings results and analyst expectations revision", "horizon": "short", "position_side": "long", "confidence": "high", "source_url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Vera Rubin rack-scale systems will deliver 10x energy efficiency improvement per watt versus Grace Blackwell, addressing data center power constraints", "catalyst": "Vera Rubin commercial release later in 2026", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Networking revenue will grow 263% YoY driven by NVLink adoption and Spectrum-X Ethernet switch deployments with hyperscalers", "catalyst": "Meta and other hyperscaler deals for NVLink networking technology and Spectrum-X Ethernet switches", "horizon": "medium", "position_side": "long", "confidence": "high", "source_url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html", "retrieved_date": "2026-04-10"}, {"ticker": "NVDA", "claim": "Nvidia's business model converts a massive share of sales directly into cash due to low capital intensity relative to data center operators, enabling substantial capital returns despite high growth", "catalyst": "Continued demand for AI chips and maintenance of high gross margins as the company scales", "horizon": "long", "position_side": "long", "confidence": "medium", "source_url": "https://www.fool.com/investing/2026/03/10/dont-overlook-this-under-the-radar-bull-case-for-n/", "retrieved_date": "2026-04-10"}, {"ticker": "005930.KS", "claim": "Samsung HBM unit demand contracts 15% if pruning adopted", "catalyst": "Hyperscaler adoption", "horizon": "medium", "position_side": "short", "confidence": "medium", "source_url": "https://youtube.com/watch?v=mock_v3_ep1", "retrieved_date": "2026-04-07"}, {"ticker": "NVDA", "claim": "Data center GPU revenue grows 40% YoY through 2027", "catalyst": "Hyperscaler capex commits", "horizon": "medium", "position_side": "long", "confidence": "medium", "source_url": "https://youtube.com/watch?v=mock_v3_ep1", "retrieved_date": "2026-04-07"}];
+const OPTIONS = {"ticker": ["005930.KS", "MSFT", "NVDA", "TSM"], "horizon": ["long", "medium", "short"], "position_side": ["long", "short"], "confidence": ["high", "low", "medium"]};
+const COLS = [["ticker", "Ticker", "select"], ["claim", "Claim", "text"], ["catalyst", "Catalyst", "text"], ["horizon", "Horizon", "select"], ["position_side", "Direction", "select"], ["confidence", "Confidence", "select"], ["source_url", "Source", "none"], ["retrieved_date", "Date", "none"]];
+
+let sortCol = 'retrieved_date';
+let sortAsc = false;
+let filters = {};
+
+function init() {
+  const hdr = document.getElementById('headers');
+  const flt = document.getElementById('filters');
+  COLS.forEach(([key, label, ftype]) => {
+    const th = document.createElement('th');
+    th.innerHTML = label + ' <span class="arrow" id="arrow-'+key+'"></span>';
+    th.onclick = () => toggleSort(key);
+    hdr.appendChild(th);
+
+    const ftd = document.createElement('th');
+    if (ftype === 'select') {
+      const sel = document.createElement('select');
+      sel.innerHTML = '<option value="">All</option>' +
+        (OPTIONS[key]||[]).map(v => '<option value="'+v+'">'+v+'</option>').join('');
+      sel.onchange = () => { filters[key] = sel.value; render(); };
+      ftd.appendChild(sel);
+    } else if (ftype === 'text') {
+      const inp = document.createElement('input');
+      inp.placeholder = 'filter...';
+      inp.oninput = () => { filters[key] = inp.value.toLowerCase(); render(); };
+      ftd.appendChild(inp);
+    }
+    flt.appendChild(ftd);
+  });
+  render();
+}
+
+function toggleSort(col) {
+  if (sortCol === col) sortAsc = !sortAsc;
+  else { sortCol = col; sortAsc = true; }
+  render();
+}
+
+function pillHtml(val, type) {
+  if (!val) return '';
+  const cls = 'pill pill-' + val;
+  return '<span class="' + cls + '">' + val + '</span>';
+}
+
+function sourceHtml(url) {
+  if (!url) return '';
+  try {
+    const domain = new URL(url).hostname.replace('www.','');
+    return '<a href="'+url+'" target="_blank" rel="noopener">'+domain+'</a>';
+  } catch { return url; }
+}
+
+function render() {
+  let rows = ROWS.filter(r => {
+    for (const [key, , ftype] of COLS) {
+      const f = filters[key];
+      if (!f) continue;
+      const v = (r[key]||'').toString();
+      if (ftype === 'select' && v !== f) return false;
+      if (ftype === 'text' && !v.toLowerCase().includes(f)) return false;
+    }
+    return true;
+  });
+
+  rows.sort((a, b) => {
+    let va = (a[sortCol]||'').toString().toLowerCase();
+    let vb = (b[sortCol]||'').toString().toLowerCase();
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  // Update arrows
+  COLS.forEach(([key]) => {
+    const el = document.getElementById('arrow-'+key);
+    if (key === sortCol) {
+      el.className = 'arrow active';
+      el.textContent = sortAsc ? '\u25B2' : '\u25BC';
+    } else {
+      el.className = 'arrow';
+      el.textContent = '';
+    }
+  });
+
+  document.getElementById('rowcount').textContent = rows.length;
+
+  const tbody = document.getElementById('tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="'+COLS.length+'" class="empty">No matching theses</td></tr>';
+    return;
+  }
+
+  const html = rows.map(r => {
+    const cells = COLS.map(([key]) => {
+      const v = r[key] || '';
+      if (key === 'ticker') return '<td class="cell-ticker">' + v + '</td>';
+      if (key === 'claim') return "<td class=\"cell-claim\"><span onclick=\"this.classList.toggle('expanded')\">" + v + "</span></td>";
+      if (key === 'catalyst') return "<td class=\"cell-catalyst\"><span onclick=\"this.classList.toggle('expanded')\">" + v + "</span></td>";
+      if (key === 'position_side') return '<td>' + pillHtml(v, 'direction') + '</td>';
+      if (key === 'confidence') return '<td>' + pillHtml(v, 'confidence') + '</td>';
+      if (key === 'horizon') return '<td>' + pillHtml(v, 'horizon') + '</td>';
+      if (key === 'source_url') return '<td class="cell-source">' + sourceHtml(v) + '</td>';
+      return '<td>' + v + '</td>';
+    }).join('');
+    return '<tr>' + cells + '</tr>';
+  }).join('');
+  tbody.innerHTML = html;
+}
+
+init();
+</script>
+</body>
+</html>
