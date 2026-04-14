@@ -42,6 +42,13 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 .cluster-arrow { color: #555; font-size: 10px; transition: transform 0.2s; margin-right: 4px; }
 .cluster.open > .cluster-header .cluster-arrow { transform: rotate(90deg); }
 
+/* Column headers row */
+.cluster-col-headers { display: flex; align-items: center; padding: 4px 14px 2px 28px;
+    border-bottom: 1px solid #2a2a2a; }
+.cluster-col-headers .col-spacer { flex: 1; }
+.cluster-col-headers .col-label { font-size: 9px; color: #666; text-transform: uppercase;
+    letter-spacing: 0.5px; text-align: center; min-width: 56px; }
+
 /* Evidence table */
 .evidence { display: none; padding: 0 14px 8px 28px; }
 .cluster.open > .evidence { display: block; }
@@ -215,7 +222,7 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 <body>
 <div class="container">
 <h1>Thesis Clusters</h1>
-<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 03:04 UTC | 81 theses across 18 tickers</div>
+<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 23:23 UTC | 81 theses across 18 tickers</div>
 
 <div class="extract-bar">
   <input id="url-input" type="url" placeholder="Paste URL to extract thesis..." />
@@ -255,6 +262,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="long" data-dtype="exit_signal"
          data-digest="capex will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion" data-claims="advanced packaging capacity and chip supply constraints will be alleviated through tsmc&#x27;s overseas expansion initiative capex will increase to $52-$56 billion in 2026, targeting advanced packaging and capacity expansion">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -780,6 +795,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="short" data-dtype="exit_signal"
          data-digest="current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion" data-claims="current-quarter revenue guidance of $78 billion (±2%) will be achieved, exceeding analyst consensus estimates of $72.6 billion">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -1496,6 +1519,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="short" data-dtype="entry_signal"
          data-digest="microsoft cloud growth is decelerating, evidenced by stock falling 7% on q2 fy2026 earnings despite 16.7% yoy revenue growth" data-claims="microsoft cloud growth is decelerating, evidenced by stock falling 7% on q2 fy2026 earnings despite 16.7% yoy revenue growth">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2117,6 +2148,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="google benefits from anthropic partnership and potential openai market share losses" data-claims="google benefits from anthropic partnership and potential openai market share losses google benefits from openai weakness as anthropic (google-backed) gains market share">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2169,6 +2208,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="sk hynix hbm demand increases as anthropic scales inference infrastructure" data-claims="sk hynix hbm demand increases as anthropic scales inference infrastructure">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2212,6 +2259,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="samsung hbm unit demand contracts 15% if pruning adopted" data-claims="samsung hbm unit demand contracts 15% if pruning adopted">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2255,6 +2310,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="axon.ai ai advertising platform achieves &gt;1b dau with 35-second engagement, demonstrating superior mobile gaming ad monetization" data-claims="axon.ai ai advertising platform achieves &gt;1b dau with 35-second engagement, demonstrating superior mobile gaming ad monetization">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2298,6 +2361,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="long" data-dtype="risk_monitor"
          data-digest="coinbase faces long-term existential risk from quantum computing threat to crypto security" data-claims="coinbase faces long-term existential risk from quantum computing threat to crypto security">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2341,6 +2412,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="us munitions supply chain rebuild via modern manufacturing (arsenal-1 factory model) addresses critical defense industrial base weakness" data-claims="us munitions supply chain rebuild via modern manufacturing (arsenal-1 factory model) addresses critical defense industrial base weakness">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2384,6 +2463,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="short" data-dtype="entry_signal"
          data-digest="drone specialist benefits from acknowledged us-china drone gap requiring urgent us production scale-up" data-claims="drone specialist benefits from acknowledged us-china drone gap requiring urgent us production scale-up">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2427,6 +2514,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="short" data-dtype="entry_signal"
          data-digest="meta faces landmark social media verdicts" data-claims="meta faces landmark social media verdicts">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2470,6 +2565,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="iran war costs lead to fertilizer crisis and downstream impacts" data-claims="iran war costs lead to fertilizer crisis and downstream impacts">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2513,6 +2616,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="mosaic fertilizer benefits from iran supply disruption and urea price spike" data-claims="mosaic fertilizer benefits from iran supply disruption and urea price spike">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2556,6 +2667,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="nutrien benefits from fertilizer supply shock as alternative north american supplier" data-claims="nutrien benefits from fertilizer supply shock as alternative north american supplier">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2599,6 +2718,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="long" data-horizon="short" data-dtype="risk_monitor"
          data-digest="us-china military technology gap and 2027 taiwan threat timeline drives accelerated defense software and ai adoption" data-claims="us-china military technology gap and 2027 taiwan threat timeline drives accelerated defense software and ai adoption">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2642,6 +2769,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="rocket lab faces increased competition and valuation compression from spacex ipo" data-claims="rocket lab faces increased competition and valuation compression from spacex ipo">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2685,6 +2820,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="traditional defense prime suffers margin pressure as pentagon shifts procurement toward agile software-first entrants like palantir/anduril" data-claims="traditional defense prime suffers margin pressure as pentagon shifts procurement toward agile software-first entrants like palantir/anduril">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
@@ -2728,6 +2871,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
     <span class="ticker-arrow">&#9654;</span>
   </div>
   <div class="ticker-body">
+    <div class="cluster-col-headers">
+      <span class="col-spacer"></span>
+      <span class="col-label">upside</span>
+      <span class="col-label">conviction</span>
+      <span class="col-label">dir</span>
+      <span class="col-label">conf</span>
+      <span class="col-label">sources</span>
+    </div>
     <div class="cluster" data-direction="short" data-horizon="medium" data-dtype="thesis_confirmation"
          data-digest="social media sector faces regulatory/liability expansion following meta verdicts" data-claims="social media sector faces regulatory/liability expansion following meta verdicts">
       <div class="cluster-header" onclick="this.parentElement.classList.toggle('open')">
