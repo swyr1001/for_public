@@ -222,7 +222,7 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 <body>
 <div class="container">
 <h1>Thesis Clusters</h1>
-<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 23:23 UTC | 81 theses across 18 tickers</div>
+<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 23:27 UTC | 81 theses across 18 tickers</div>
 
 <div class="extract-bar">
   <input id="url-input" type="url" placeholder="Paste URL to extract thesis..." />
@@ -3059,6 +3059,15 @@ function showConvictionModal(el, e) {
     + '<div><div class="cv-composite-score">' + compSign + composite.toFixed(3) + '</div>'
     + '<div class="cv-composite-label">composite score</div></div>'
     + '<span class="cv-composite-trend ' + trendCls + '">' + trend + '</span></div>'
+    + '<div style="display:flex;gap:12px;align-items:center;margin:10px 0 4px;padding:8px 12px;background:#252525;border-radius:6px">'
+    + '<span style="font-size:10px;color:#666">Possible trends:</span>'
+    + '<span class="cv-composite-trend strengthening" style="font-size:11px;padding:1px 8px"' + (trend==='strengthening'?' title="current"':'') + '>strengthening</span>'
+    + '<span style="font-size:10px;color:#666">&gt; +0.1</span>'
+    + '<span class="cv-composite-trend stable" style="font-size:11px;padding:1px 8px"' + (trend==='stable'?' title="current"':'') + '>stable</span>'
+    + '<span style="font-size:10px;color:#666">&minus;0.1 to +0.1</span>'
+    + '<span class="cv-composite-trend weakening" style="font-size:11px;padding:1px 8px"' + (trend==='weakening'?' title="current"':'') + '>weakening</span>'
+    + '<span style="font-size:10px;color:#666">&lt; &minus;0.1</span>'
+    + '</div>'
     + bars
     + '<div style="margin-top:16px">' + rows + '</div>'
     + '</div></div></div>';
