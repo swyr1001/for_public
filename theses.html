@@ -104,6 +104,24 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 .extract-bar .status-ok { color: #6bca6b; }
 .extract-bar .status-err { color: #ca6b6b; }
 
+/* Extract results (inline after URL extraction) */
+#extract-results { margin-bottom: 12px; }
+#extract-results:empty { display: none; }
+.extract-group { border: 1px solid #c8b56040; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+.extract-group-header { background: #2a2a1a; padding: 8px 14px; display: flex; align-items: center; gap: 8px; }
+.extract-group-header .pill-new { animation: new-pulse 2s ease-in-out infinite; }
+.extract-url-tag { font-size: 11px; color: #6b9bd2; text-decoration: none; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; max-width: 400px; }
+.extract-url-tag:hover { text-decoration: underline; }
+.extract-group-body { padding: 0; }
+.extract-group-body table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.extract-group-body th { text-align: left; padding: 4px 10px; color: #888; border-bottom: 1px solid #333;
+    font-size: 11px; font-weight: 400; }
+.extract-group-body td { padding: 4px 10px; border-bottom: 1px solid #222; vertical-align: top; }
+.extract-dismiss { margin-left: auto; background: none; border: none; color: #666;
+    cursor: pointer; font-size: 14px; padding: 0 4px; }
+.extract-dismiss:hover { color: #ccc; }
+
 .empty { text-align: center; padding: 40px; color: #666; }
 .hidden { display: none !important; }
 
@@ -174,13 +192,14 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 <body>
 <div class="container">
 <h1>Thesis Clusters</h1>
-<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 02:42 UTC | 81 theses across 18 tickers</div>
+<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 02:48 UTC | 81 theses across 18 tickers</div>
 
 <div class="extract-bar">
   <input id="url-input" type="url" placeholder="Paste URL to extract thesis..." />
   <button id="url-extract" onclick="extractUrl()">Extract</button>
   <span id="url-status"></span>
 </div>
+<div id="extract-results"></div>
 
 <div class="filter-bar">
   <label>Ticker:</label>
@@ -2913,7 +2932,8 @@ function extractUrl() {
     urlBtn.disabled = false;
     if (data.length > 0) {
       urlStatus.className = 'status status-ok';
-      urlStatus.textContent = data.length + ' thesis extracted. Reload page after next engine run to see them.';
+      urlStatus.textContent = data.length + ' thesis extracted.';
+      renderExtractResults(data, url);
       urlInput.value = '';
     } else {
       urlStatus.className = 'status status-err';
@@ -2925,6 +2945,46 @@ function extractUrl() {
     urlStatus.className = 'status status-err';
     urlStatus.textContent = 'Error: ' + err.message + '. Is backend running?';
   });
+}
+
+function renderExtractResults(theses, sourceUrl) {
+  var container = document.getElementById('extract-results');
+  var dirPill = function(d) {
+    if (!d) return '';
+    return '<span class="pill pill-' + d + '">' + d + '</span>';
+  };
+  var horizonPill = function(h) {
+    if (!h) return '';
+    return '<span class="pill pill-' + h + '">' + h + '</span>';
+  };
+  var domain = '';
+  try { domain = new URL(sourceUrl).hostname.replace('www.',''); } catch(e) { domain = sourceUrl; }
+
+  var rows = '';
+  theses.forEach(function(t) {
+    rows += '<tr>'
+      + '<td>' + (t.subject || '') + '</td>'
+      + '<td>' + (t.claim || '') + '</td>'
+      + '<td>' + (t.catalyst || '') + '</td>'
+      + '<td>' + dirPill(t.direction || t.position_side || '') + '</td>'
+      + '<td>' + horizonPill(t.horizon || '') + '</td>'
+      + '<td>' + (t.magnitude || '') + '</td>'
+      + '</tr>';
+  });
+
+  var groupHtml = '<div class="extract-group">'
+    + '<div class="extract-group-header">'
+    + '<span class="pill pill-new">New &mdash; URL</span>'
+    + '<a class="extract-url-tag" href="' + sourceUrl + '" target="_blank" rel="noopener">' + domain + '</a>'
+    + '<span style="font-size:11px;color:#888">' + theses.length + ' theses</span>'
+    + '<button class="extract-dismiss" onclick="this.closest('.extract-group').remove()" title="Dismiss">&times;</button>'
+    + '</div>'
+    + '<div class="extract-group-body"><table>'
+    + '<thead><tr><th>Ticker</th><th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Magnitude</th></tr></thead>'
+    + '<tbody>' + rows + '</tbody>'
+    + '</table></div></div>';
+
+  container.insertAdjacentHTML('afterbegin', groupHtml);
 }
 </script>
 </body>
