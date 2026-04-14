@@ -215,7 +215,7 @@ h1 { font-size: 20px; color: #c8b560; margin-bottom: 4px; }
 <body>
 <div class="container">
 <h1>Thesis Clusters</h1>
-<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 03:00 UTC | 81 theses across 18 tickers</div>
+<div class="meta">Data: 2026-04-10 | Built: 2026-04-14 03:04 UTC | 81 theses across 18 tickers</div>
 
 <div class="extract-bar">
   <input id="url-input" type="url" placeholder="Paste URL to extract thesis..." />
@@ -3094,7 +3094,7 @@ function renderExtractResults(theses, sourceUrl) {
     + '<span class="pill pill-new">New &mdash; URL</span>'
     + '<a class="extract-url-tag" href="' + sourceUrl + '" target="_blank" rel="noopener">' + domain + '</a>'
     + '<span style="font-size:11px;color:#888">' + theses.length + ' theses</span>'
-    + '<button class="extract-dismiss" onclick="this.closest('.extract-group').remove()" title="Dismiss">&times;</button>'
+    + '<button class="extract-dismiss" onclick="this.closest(\'.extract-group\').remove()" title="Dismiss">&times;</button>'
     + '</div>'
     + '<div class="extract-group-body"><table>'
     + '<thead><tr><th>Ticker</th><th>Claim</th><th>Catalyst</th><th>Dir</th><th>Horizon</th><th>Magnitude</th></tr></thead>'
